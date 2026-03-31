@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Break Free — 21 Day Monk Mode Blueprint</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+Devanagari:wght@400;600;700&family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:      #0e0e0e;
+  --card:    #181818;
+  --border:  #2a2a2a;
+  --orange:  #f77205;
+  --orange2: #f5a040;
+  --white:   #f0ece4;
+  --muted:   #666;
+  --muted2:  #444;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+  background: var(--orange);
+  color: #000;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 40px 20px 48px;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero-pre {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+  animation: fadeUp 0.7s ease both 0.05s;
+}
+
+.hero-h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 88px;
+  line-height: 0.85;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  animation: fadeUp 0.8s ease both 0.1s;
+}
+.hero-h1 .l1 { display: block; color: var(--white); }
+.hero-h1 .l2 { display: block; color: var(--orange); }
+
+/* ── GREEN SCREEN IMAGE PLACEHOLDER ── */
+.hero-image-placeholder {
+  width: 100%;
+  margin: 28px 0 28px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px dashed #00cc44;
+  background: #00cc44;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  animation: fadeUp 0.8s ease both 0.13s;
+  position: relative;
+}
+.hero-image-placeholder .gs-label {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #005c1e;
+  opacity: 0.7;
+}
+.hero-image-placeholder .gs-sub {
+  font-size: 12px;
+  font-weight: 700;
+  color: #005c1e;
+  opacity: 0.6;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+/* To replace: change background to url('your-image.jpg') center/cover no-repeat and remove dashed border */
+
+.hero-sub {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #888;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  animation: fadeUp 0.8s ease both 0.15s;
+}.hero-sub strong { color: var(--white); }
+
+.btn-main {
+  display: block;
+  background: var(--orange);
+  color: #000;
+  font-size: 17px;
+  font-weight: 800;
+  padding: 18px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 14px;
+  animation: fadeUp 0.8s ease both 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-main::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  animation: shine 2.5s ease infinite;
+}
+@keyframes shine { 0%{transform:translateX(-100%)} 55%,100%{transform:translateX(100%)} }
+
+.hero-note {
+  font-size: 12px;
+  color: var(--muted);
+  animation: fadeUp 0.8s ease both 0.25s;
+}
+.hero-note s { color: var(--muted2); }
+
+/* stats row */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 36px;
+  animation: fadeUp 0.8s ease both 0.3s;
+}
+.stat {
+  background: var(--card);
+  padding: 20px 12px;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 32px;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 20px;
+}
+
+/* ── SECTION COMMONS ── */
+section { padding: 52px 20px; }
+
+.sec-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.sec-h {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.sec-sub {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.sec-sub strong { color: var(--white); }
+
+/* ── PAIN ── */
+.pain-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+
+.pain-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid #c0392b;
+  border-radius: 10px;
+  padding: 16px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+  transition: transform 0.2s;
+}
+.pain-item:active { transform: scale(0.98); }
+.pi-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+.pain-note {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.8;
+  text-align: center;
+}
+.pain-note strong { color: var(--white); }
+
+/* ── SOLUTION ── */
+.sol-features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+
+.sol-feat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.sol-feat:active { border-color: var(--orange); }
+.sf-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.sf-check {
+  width: 28px; height: 28px;
+  background: rgba(240,124,32,0.12);
+  border: 1px solid rgba(240,124,32,0.3);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.sf-title { font-size: 16px; font-weight: 800; }
+.sf-desc { font-family: 'Noto Sans Devanagari', sans-serif; font-size: 13px; color: #777; line-height: 1.7; padding-left: 40px; }
+
+/* ── CHAPTERS ── */
+.ch-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+
+.ch-row {
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  transition: background 0.2s;
+}
+.ch-row:active { background: #1f1f1f; }
+.ch-n {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  color: var(--orange);
+  opacity: 0.5;
+  min-width: 28px;
+  line-height: 1;
+}
+.ch-info h4 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+.ch-info p { font-size: 12px; color: var(--muted); }
+
+/* ── REVIEWS ── */
+.rev-list { display: flex; flex-direction: column; gap: 16px; }
+
+.rev-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.rev-stars { color: var(--orange); font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
+.rev-text {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.rev-author { display: flex; align-items: center; gap: 10px; }
+.rev-av {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #333, #555);
+  border: 1px solid var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 16px;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+.rev-name { font-size: 13px; font-weight: 700; }
+.rev-badge { font-size: 11px; color: var(--orange); }
+
+/* ── BONUS ── */
+.bonus-kicker {
+  display: inline-block;
+  background: var(--orange);
+  color: #000;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.bonus-list { display: flex; flex-direction: column; gap: 12px; }
+
+.bonus-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: border-color 0.2s;
+}
+.bonus-card:active { border-color: var(--orange); }
+.bc-icon {
+  width: 44px; height: 44px;
+  background: rgba(240,124,32,0.08);
+  border: 1px solid rgba(240,124,32,0.2);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.bc-val { font-size: 11px; color: var(--muted); text-decoration: line-through; margin-bottom: 4px; font-family: 'DM Sans', sans-serif; }
+.bc-title { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+.bc-desc { font-family: 'Noto Sans Devanagari', sans-serif; font-size: 13px; color: #777; line-height: 1.6; }
+
+/* ── FAQ ── */
+.faq-list { display: flex; flex-direction: column; gap: 8px; }
+
+details.faq-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+details.faq-item[open] { border-color: rgba(240,124,32,0.4); }
+
+details.faq-item summary {
+  padding: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  outline: none;
+  user-select: none;
+}
+details.faq-item summary::-webkit-details-marker { display: none; }
+.faq-arrow {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--orange);
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+details.faq-item[open] .faq-arrow { transform: rotate(45deg); }
+.faq-ans {
+  padding: 0 18px 18px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* ── PRICING ── */
+.price-section { padding: 52px 20px 80px; }
+
+.price-box {
+  background: var(--card);
+  border: 1px solid rgba(240,124,32,0.3);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.price-top {
+  background: #141414;
+  padding: 28px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.pt-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+.pt-was { font-size: 16px; color: var(--muted2); text-decoration: line-through; margin-bottom: 4px; }
+.pt-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 88px;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.pt-price sup { font-size: 36px; vertical-align: top; margin-top: 18px; display: inline-block; }
+.pt-tag { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+
+.price-body { padding: 24px; }
+
+.inc-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.inc-row { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; }
+.inc-chk { color: var(--orange); font-size: 16px; flex-shrink: 0; }
+.inc-free { font-size: 11px; color: #5a8a30; font-weight: 700; margin-left: 4px; }
+
+.btn-buy {
+  display: block;
+  background: var(--orange);
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  animation: btn-pulse 2.5s ease-in-out infinite;
+}
+.btn-buy::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: translateX(-100%);
+  animation: shine 2.8s ease infinite;
+}
+
+@keyframes btn-pulse {
+  0%,100%{ box-shadow: 0 4px 24px rgba(240,124,32,0.3); }
+  50%{ box-shadow: 0 4px 40px rgba(240,124,32,0.55); }
+}
+
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.trust-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.trust-chip .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--orange); }
+
+/* ── FOOTER ── */
+footer {
+  padding: 32px 20px 40px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer-brand {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+footer p { font-size: 11px; color: var(--muted2); margin-bottom: 4px; }
+
+/* ── STICKY BAR ── */
+.sticky {
+  position: fixed;
+  bottom: 0; left: 50%; transform: translateX(-50%) translateY(100%);
+  width: 100%; max-width: 480px;
+  background: rgba(14,14,14,0.97);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(240,124,32,0.2);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  z-index: 1000;
+  transition: transform 0.35s ease;
+}
+.sticky.show { transform: translateX(-50%) translateY(0); }
+.sticky-txt { font-size: 13px; font-weight: 700; }
+.sticky-txt small { display: block; font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 1px; }
+.sticky-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.sticky-price {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 28px;
+  color: var(--orange);
+  line-height: 1;
+}
+.sticky-btn {
+  background: var(--orange);
+  color: #000;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">🔥 Sirf ₹199 — Offer limited time ke liye!</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">⚡ For Serious Men Only</div>
+  <p class="hero-pre">21 Din Ka Monk Mode Blueprint</p>
+  <h1 class="hero-h1">
+    <span class="l1">Break</span>
+    <span class="l2">Free</span>
+  </h1>
+
+  <!-- ✅ GREEN SCREEN PLACEHOLDER — Replace with your image later -->
+  <!-- To replace: change background-color to url('your-image.jpg') center/cover and remove border/label -->
+<img src="book.png" alt="Break Free Ebook" 
+style="width:100%;border-radius:14px;display:block;margin:28px 0;">
+  <p class="hero-sub">
+    <strong>1000+ युवाओं ने इस सिस्टम की मदद से अपनी ज़िंदगी बर्बाद करने वाली आदतों को हमेशा के लिए छोड़ दिया है।
+
+अब बारी तुम्हारी है…
+सिर्फ 21 दिनों में खुद को बदलने की।<br>
+    
+  </p>
+  <a href="#pricing" class="btn-main">🔥 Abhi Download Karo — ₹199</a>
+  <p class="hero-note">Regular price: <s>₹499</s> · Instant PDF · 100% Private</p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">1000+</div>
+      <div class="stat-label">Copies Sold</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">21</div>
+      <div class="stat-label">Din Ka System</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">Rating</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PAIN -->
+<section>
+  <span class="sec-label reveal">Kya Ye Sab Tumhare Saath Ho Raha Hai?</span>
+  <h2 class="sec-h reveal">Ye Loop<br>Todo Abhi</h2>
+  <p class="sec-sub reveal">Dost, <strong>ye tumhari galti nahi।</strong> Ye 'Saste Dopamine' ka jaal hai — jo dimag ko hack kar leta hai।</p>
+
+  <div class="pain-list">
+    <div class="pain-item reveal"><span class="pi-icon">❌</span>Raat ko screen scroll karna — aur subah khud par pachhtana</div>
+    <div class="pain-item reveal"><span class="pi-icon">❌</span>Hamesha thaka hua, Brain Fog, kisi kaam mein mann nahi lagta</div>
+    <div class="pain-item reveal"><span class="pi-icon">❌</span>Bade sapne hain par motivation bilkul zero hai</div>
+    <div class="pain-item reveal"><span class="pi-icon">❌</span>"Aaj se band" — sochte ho roz, toot jaate ho roz</div>
+  </div>
+
+  <div class="pain-note reveal" style="margin-top:16px">
+    Ye willpower ki problem nahi —<br><strong>dimag ki rewiring ki zaroorat hai।</strong>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SOLUTION -->
+<section>
+  <span class="sec-label reveal">Solution</span>
+  <h2 class="sec-h reveal">Break Free<br>Blueprint</h2>
+  <p class="sec-sub reveal">Sirf aadatein todna kaafi nahi — dimag ko rewire karna padta hai। Ye system exactly wahi karta hai।</p>
+
+  <div class="sol-features">
+    <div class="sol-feat reveal">
+      <div class="sf-row"><div class="sf-check">✓</div><div class="sf-title">Dopamine Reset</div></div>
+      <p class="sf-desc">Dimag ko re-program karo — asli motivation aur energy wapas paao jo screen ne chura li thi।</p>
+    </div>
+    <div class="sol-feat reveal">
+      <div class="sf-row"><div class="sf-check">✓</div><div class="sf-title">5-Second Urge Control</div></div>
+      <p class="sf-desc">Jab bhi bhatkaav ho — yeh proven technique use karo। Science-backed, instantly effective।</p>
+    </div>
+    <div class="sol-feat reveal">
+      <div class="sf-row"><div class="sf-check">✓</div><div class="sf-title">Monk Mode Daily Routine</div></div>
+      <p class="sf-desc">Ek structure jo dimag ko busy rakhta hai aur purani aadatein wapas aane nahi deta।</p>
+    </div>
+    <div class="sol-feat reveal">
+      <div class="sf-row"><div class="sf-check">✓</div><div class="sf-title">Relapse Recovery Protocol</div></div>
+      <p class="sf-desc">Toot gaye to dobara kaise utho — aur pehle se zyaada strong kaise bano।</p>
+    </div>
+  </div>
+
+  <a href="#pricing" class="btn-main reveal" style="margin-top:28px">👉 Mujhe Meri Life Badalni Hai — ₹199</a>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHAPTERS -->
+<section>
+  <span class="sec-label reveal">Andar Kya Hai</span>
+  <h2 class="sec-h reveal">10 Powerful<br>Chapters</h2>
+  <p class="sec-sub reveal">Sirf padhne ke liye nahi — actually change karne ke liye।</p>
+
+  <div class="ch-list reveal">
+    <div class="ch-row"><div class="ch-n">01</div><div class="ch-info"><h4>Dopamine Trap</h4><p>Dimag dushman kaise bana — poori sachai</p></div></div>
+    <div class="ch-row"><div class="ch-n">02</div><div class="ch-info"><h4>Lat Ka Vigyan</h4><p>Sharir aur man ki asli jang</p></div></div>
+    <div class="ch-row"><div class="ch-n">03</div><div class="ch-info"><h4>21 Din Masterplan</h4><p>Aadaton ko jaad se ukhaadne ka formula</p></div></div>
+    <div class="ch-row"><div class="ch-n">04</div><div class="ch-info"><h4>Brain Hacking</h4><p>Urge aane par 5 instant techniques</p></div></div>
+    <div class="ch-row"><div class="ch-n">05</div><div class="ch-info"><h4>Monk Mode Routine</h4><p>Focus aur discipline ka system</p></div></div>
+    <div class="ch-row"><div class="ch-n">06</div><div class="ch-info"><h4>Andar Ka Sher</h4><p>Apni asli power ko pehchano</p></div></div>
+    <div class="ch-row"><div class="ch-n">07</div><div class="ch-info"><h4>Khud Se Pyaar</h4><p>Ye seekhe bina lat kabhi nahi haari</p></div></div>
+    <div class="ch-row"><div class="ch-n">08</div><div class="ch-info"><h4>Naya Lakshya</h4><p>Khaali dimag sabse bada dushman hai</p></div></div>
+    <div class="ch-row"><div class="ch-n">09</div><div class="ch-info"><h4>Relapse Protocol</h4><p>Gire? Dobara kaise utho</p></div></div>
+    <div class="ch-row"><div class="ch-n">10</div><div class="ch-info"><h4>Naya Adhyay</h4><p>21 din baad teri life ka vision</p></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REVIEWS -->
+<section>
+  <span class="sec-label reveal">Real Results</span>
+  <h2 class="sec-h reveal">Unhone Kiya —<br>Ab Tumhari Baari</h2>
+
+  <div class="rev-list">
+    <div class="rev-card reveal">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Ye 21 din ka challenge meri life ka turning point tha। Pehle poora din guilt mein nikal jaata tha। Aaj 45 din ki streak hai, mind ekdam clear। Best ₹199 investment ever!"</p>
+      <div class="rev-author"><div class="rev-av">R</div><div><div class="rev-name">Rahul M.</div><div class="rev-badge">✓ Verified Buyer · Delhi</div></div></div>
+    </div>
+    <div class="rev-card reveal">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Chapter 4 ki Brain Hacking technique — sach mein kaam karti hai। Pehli baar laga main apne dimag ka malik hoon। Confidence wapas chahiye? Zaroor lo।"</p>
+      <div class="rev-author"><div class="rev-av">A</div><div><div class="rev-name">Aakash S.</div><div class="rev-badge">✓ Verified Buyer · Mumbai</div></div></div>
+    </div>
+    <div class="rev-card reveal">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Sirf ek aur book nahi — ye alag hai। Practical aur seedha। 30 din mein energy aur focus 2x ho gaye। Bhai bas le lo।"</p>
+      <div class="rev-author"><div class="rev-av">V</div><div><div class="rev-name">Vivek K.</div><div class="rev-badge">✓ Verified Buyer · Jaipur</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<!-- TIMER SECTION -->
+<div style="background:#111;border:1px solid #2a2a2a;border-radius:14px;padding:24px 20px;margin:0 20px 0 20px;text-align:center;">
+  <p style="font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#f07c20;margin-bottom:16px;">⏳ Offer Khatam Hone Wala Hai</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:10px 14px;min-width:60px;">
+      <div style="font-family:'Bebas Neue',cursive;font-size:36px;color:#f07c20;line-height:1;" id="t-hrs">00</div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#444;margin-top:4px;">Ghante</div>
+    </div>
+    <div style="font-family:'Bebas Neue',cursive;font-size:30px;color:#333;margin-bottom:14px;">:</div>
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:10px 14px;min-width:60px;">
+      <div style="font-family:'Bebas Neue',cursive;font-size:36px;color:#f07c20;line-height:1;" id="t-min">00</div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#444;margin-top:4px;">Minute</div>
+    </div>
+    <div style="font-family:'Bebas Neue',cursive;font-size:30px;color:#333;margin-bottom:14px;">:</div>
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:10px 14px;min-width:60px;">
+      <div style="font-family:'Bebas Neue',cursive;font-size:36px;color:#f07c20;line-height:1;" id="t-sec">00</div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#444;margin-top:4px;">Second</div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:#555;margin-top:14px;font-weight:600;">Ye price dobara nahi aayegi — abhi lo!</p>
+</div>
+<!-- BONUS -->
+<section>
+  <div class="bonus-kicker">🎁 Free Bonus</div>
+  <h2 class="sec-h reveal">3 Premium<br>Bonuses FREE</h2>
+  <p class="sec-sub reveal">Total value <strong>₹997</strong> — ek bhi extra rupaya nahi।</p>
+
+  <div class="bonus-list">
+    <div class="bonus-card reveal">
+      <div class="bc-icon">🌅</div>
+      <div><div class="bc-val">Value: ₹399</div><div class="bc-title">21 Days Affirmation Audio</div><p class="bc-desc">Har din ek powerful affirmation — dimag ko reprogram karne ke liye।</p></div>
+    </div>
+    <div class="bonus-card reveal">
+      <div class="bc-icon">🧘</div>
+      <div><div class="bc-val">Value: ₹299</div><div class="bc-title">Guided Meditation Guide</div><p class="bc-desc">Urge aane par sirf 5 minute mein mind shaant karo।</p></div>
+    </div>
+    <div class="bonus-card reveal">
+      <div class="bc-icon">📋</div>
+      <div><div class="bc-val">Value: ₹299</div><div class="bc-title">Dopamine Detox Planner</div><p class="bc-desc">21 din ki progress track karo — accountability se real change aata hai।</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section>
+  <span class="sec-label reveal">Doubts</span>
+  <h2 class="sec-h reveal">Sawaal?<br>Jawaab Yahan</h2>
+
+  <div class="faq-list">
+    <details class="faq-item reveal">
+      <summary>Book kaise milegi? <span class="faq-arrow">+</span></summary>
+      <p class="faq-ans">Payment hote hi 10 second mein PDF aapke email par aa jaayegi। Direct download link — koi wait nahi।</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Privacy safe hai? <span class="faq-arrow">+</span></summary>
+      <p class="faq-ans">100% safe। Razorpay/Instamojo secure payment। Koi bhi jaankari share nahi hoti — billing private।</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Koi hidden charges hain? <span class="faq-arrow">+</span></summary>
+      <p class="faq-ans">Bilkul nahi। Ek baar ₹199 — ebook aur teeno bonuses hamesha ke liye free। Koi subscription nahi।</p>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Ye aur books se alag kaise? <span class="faq-arrow">+</span></summary>
+      <p class="faq-ans">Sirf gyaan nahi — proven techniques jo actually kaam karti hain। Chapter 4 padh ke dekho, khud samajh jaoge।</p>
+    </details>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section class="price-section" id="pricing">
+  <span class="sec-label reveal">Ab Faisla Karo</span>
+  <h2 class="sec-h reveal" style="margin-bottom:8px">Ek Investment.<br>Poori Zindagi।</h2>
+  <p class="sec-sub reveal">Coffee se bhi kam mein — apni poori zindagi badlo।</p>
+
+  <div class="price-box reveal">
+    <div class="price-top">
+      <div class="pt-label">Break Free Blueprint</div>
+      <div class="pt-was">Regular Price: ₹499</div>
+      <div class="pt-price"><sup>₹</sup>199</div>
+      <div class="pt-tag">One Time · Lifetime Access</div>
+    </div>
+    <div class="price-body">
+      <div class="inc-list">
+        <div class="inc-row"><span class="inc-chk">✓</span> Break Free Ebook (10 Chapters)</div>
+        <div class="inc-row"><span class="inc-chk">✓</span> 21 Days Affirmation Audio <span class="inc-free">FREE</span></div>
+        <div class="inc-row"><span class="inc-chk">✓</span> Guided Meditation Guide <span class="inc-free">FREE</span></div>
+        <div class="inc-row"><span class="inc-chk">✓</span> Dopamine Detox Planner <span class="inc-free">FREE</span></div>
+        <div class="inc-row"><span class="inc-chk">✓</span> Instant PDF · Email mein 10 sec</div>
+      </div>
+      <a href="#" class="btn-buy">🔥 Abhi Download Karo — ₹199</a>
+      <div class="trust-row">
+        <div class="trust-chip"><span class="dot"></span>Secure Payment</div>
+        <div class="trust-chip"><span class="dot"></span>Instant Access</div>
+        <div class="trust-chip"><span class="dot"></span>100% Private</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Book Media Hub</div>
+  <p>© 2025 Book Media Hub · Digital Product</p>
+  <p>Ek baar kharido, hamesha paas rakho</p>
+</footer>
+
+<!-- STICKY -->
+<div class="sticky" id="sticky">
+  <div class="sticky-txt">
+    Break Free Blueprint
+    <small>+ 3 Bonuses FREE</small>
+  </div>
+  <div class="sticky-right">
+    <div class="sticky-price">₹199</div>
+    <a href="#pricing" class="sticky-btn">Buy Now</a>
+  </div>
+</div>
+
+<script>
+// Reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Sticky
+const sticky = document.getElementById('sticky');
+window.addEventListener('scroll', () => { sticky.classList.toggle('show', window.scrollY > 500); }, { passive: true });
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({ behavior:'smooth' }); }
+  });
+});
+</script>
+<script>
+function startTimer() {
+  function tick() {
+    const now = new Date();
+    const midnight = new Date();
+    midnight.setHours(24, 0, 0, 0);
+    let diff = Math.max(0, midnight - now);
+    const hrs  = Math.floor(diff / 3600000); diff -= hrs * 3600000;
+    const mins = Math.floor(diff / 60000);   diff -= mins * 60000;
+    const secs = Math.floor(diff / 1000);
+    const pad = n => String(n).padStart(2, '0');
+    document.getElementById('t-hrs').textContent = pad(hrs);
+    document.getElementById('t-min').textContent = pad(mins);
+    document.getElementById('t-sec').textContent = pad(secs);
+    setTimeout(tick, 1000);
+  }
+  tick();
+}
+startTimer();
+</script>
+</body>
+</html>
