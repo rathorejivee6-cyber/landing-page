@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC Notes — Crack Karo Pehle Hi Attempt Mein</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0D0D0D;
+  --ink2:#1A1A1A;
+  --paper:#FAFAF7;
+  --paper2:#F2F1EC;
+  --paper3:#E8E6DE;
+  --saffron:#E8531A;
+  --saffron-light:#FF6B35;
+  --saffron-pale:#FFF0EB;
+  --green:#00875A;
+  --green-screen:#00B140;
+  --green-screen-dark:#009130;
+  --muted:#6B6B6B;
+  --border:rgba(13,13,13,0.1);
+  --border2:rgba(13,13,13,0.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+
+/* TOPBAR */
+.topbar{background:var(--ink);color:white;text-align:center;padding:10px 20px;font-size:13px;font-weight:500;letter-spacing:0.3px}
+.topbar span{color:#FFD166;font-weight:600}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:99;
+  background:rgba(250,250,247,0.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 6%;
+}
+.logo{font-family:'Fraunces',serif;font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-0.5px}
+.logo em{color:var(--saffron);font-style:normal}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-link{font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;transition:color 0.2s}
+.nav-link:hover{color:var(--ink)}
+.nav-btn{background:var(--ink);color:white;padding:9px 22px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;transition:background 0.2s}
+.nav-btn:hover{background:var(--saffron)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:90vh;align-items:center}
+.hero-left{padding:80px 5% 80px 8%}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--saffron-pale);border:1px solid rgba(232,83,26,0.2);
+  color:var(--saffron);font-size:11px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 14px;border-radius:30px;margin-bottom:24px;
+}
+.eyebrow::before{content:'';width:6px;height:6px;background:var(--saffron);border-radius:50%;animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2.6rem,4.5vw,4rem);
+  font-weight:900;line-height:1.08;letter-spacing:-2px;
+  margin-bottom:20px;color:var(--ink);
+}
+.hero h1 .accent{color:var(--saffron);font-style:italic}
+.hero-sub{font-size:16px;color:var(--muted);line-height:1.7;max-width:420px;margin-bottom:32px;font-weight:300}
+.hero-sub strong{color:var(--ink);font-weight:600}
+
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.btn-primary{
+  background:var(--saffron);color:white;
+  padding:15px 32px;border-radius:8px;font-size:15px;font-weight:600;
+  text-decoration:none;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;
+}
+.btn-primary:hover{background:var(--saffron-light);transform:translateY(-2px)}
+.btn-wa{
+  background:transparent;color:var(--ink);
+  padding:15px 24px;border-radius:8px;font-size:14px;font-weight:500;
+  text-decoration:none;border:1.5px solid var(--border2);cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;
+}
+.btn-wa:hover{border-color:var(--ink);background:var(--paper2)}
+
+/* HERO PROOF — below green screen inside hero-right */
+.hero-proof{
+  display:flex;gap:28px;align-items:center;flex-wrap:wrap;
+  justify-content:center;
+  background:white;
+  border-top:1px solid var(--border);
+  padding:20px 24px;
+  width:100%;
+  position:absolute;
+  bottom:0;left:0;right:0;
+  z-index:2;
+}
+.proof-item{display:flex;flex-direction:column;gap:2px;align-items:center}
+.proof-num{
+  font-family:'Fraunces',serif;font-size:1.8rem;font-weight:700;
+  color:var(--ink);line-height:1;
+  transition:transform 0.1s;
+}
+.proof-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.proof-div{width:1px;height:32px;background:var(--border2)}
+
+/* HERO RIGHT */
+.hero-right{
+  background:var(--paper2);height:100%;min-height:90vh;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;border-left:1px solid var(--border);
+  padding-bottom:90px; /* space for proof bar */
+}
+.hero-right::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(13,13,13,0.015) 30px,rgba(13,13,13,0.015) 31px);
+}
+.gs-frame{
+  width:75%;max-width:340px;aspect-ratio:3/4;
+  background:var(--green-screen);border-radius:12px;
+  border:3px solid var(--green-screen-dark);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  position:relative;z-index:1;box-shadow:20px 20px 0 rgba(13,13,13,0.08);
+}
+.gs-frame::before,.gs-frame::after,.gs-frame .c3,.gs-frame .c4{
+  content:'';position:absolute;width:18px;height:18px;border-color:rgba(0,0,0,0.35);border-style:solid;
+}
+.gs-frame::before{top:10px;left:10px;border-width:2.5px 0 0 2.5px}
+.gs-frame::after{top:10px;right:10px;border-width:2.5px 2.5px 0 0}
+.gs-frame .c3{bottom:10px;left:10px;border-width:0 0 2.5px 2.5px}
+.gs-frame .c4{bottom:10px;right:10px;border-width:0 2.5px 2.5px 0}
+.gs-text{background:rgba(0,0,0,0.45);color:white;padding:7px 18px;border-radius:5px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.gs-sub{font-size:11px;color:rgba(0,0,0,0.4);font-weight:600}
+
+.float-badge{
+  position:absolute;z-index:2;background:white;border:1px solid var(--border2);
+  border-radius:10px;padding:10px 14px;font-size:12px;font-weight:600;color:var(--ink);
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);white-space:nowrap;
+}
+.fb-top{top:10%;right:6%}
+.fb-bot{bottom:18%;left:6%}
+.fb-top span,.fb-bot span{display:block;font-size:10px;color:var(--muted);font-weight:400;margin-top:1px}
+
+/* SECTIONS */
+.section{padding:80px 8%;max-width:1200px;margin:0 auto}
+.sec-label{font-size:11px;text-transform:uppercase;letter-spacing:2.5px;color:var(--saffron);font-weight:600;margin-bottom:10px}
+.sec-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.15;letter-spacing:-1px;margin-bottom:10px}
+.sec-desc{font-size:15px;color:var(--muted);line-height:1.7;max-width:520px;font-weight:300}
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+
+/* NOTES PREVIEW */
+.preview-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:80px 8%;max-width:1200px;margin:0 auto}
+.gs-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gs-card{
+  background:var(--green-screen);border-radius:10px;aspect-ratio:3/4;
+  border:2px solid var(--green-screen-dark);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  cursor:pointer;transition:transform 0.2s;position:relative;overflow:hidden;
+}
+.gs-card:nth-child(odd){transform:translateY(-8px)}
+.gs-card:hover{transform:translateY(-12px) !important}
+.gs-card-tag{background:rgba(0,0,0,0.4);color:white;padding:4px 10px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase}
+.gs-card-icon{font-size:28px;opacity:0.6}
+
+.preview-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.preview-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.preview-item:last-child{border-bottom:none}
+.pi-num{width:28px;height:28px;border-radius:50%;background:var(--saffron-pale);border:1px solid rgba(232,83,26,0.2);color:var(--saffron);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pi-text{font-size:17px;color:var(--ink);line-height:1.6}
+.pi-text small{display:block;font-size:15px;color:var(--muted);margin-top:2px;font-weight:300}
+
+/* FEATURES */
+.features-bg{background:var(--paper2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:48px}
+.feat-cell{background:var(--paper);padding:28px 24px;transition:background 0.15s}
+.feat-cell:hover{background:var(--paper2)}
+.feat-icon{font-size:22px;margin-bottom:14px;display:block}
+.feat-name{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.feat-desc{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.price-card{border:1px solid var(--border2);border-radius:14px;padding:28px 24px;background:white;position:relative;transition:all 0.2s;display:flex;flex-direction:column}
+.price-card:hover{border-color:var(--ink);transform:translateY(-3px)}
+.price-card.featured{background:var(--ink);color:white;border-color:var(--ink);transform:scale(1.03)}
+.price-card.featured:hover{transform:scale(1.03) translateY(-3px)}
+.best-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--saffron);color:white;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap}
+.lang-flag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:16px;width:fit-content}
+.flag-hi{background:rgba(232,83,26,0.1);color:var(--saffron)}
+.flag-en{background:rgba(0,135,90,0.1);color:var(--green)}
+.featured .lang-flag{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9)}
+.pc-name{font-size:13px;font-weight:500;color:var(--muted);margin-bottom:12px}
+.featured .pc-name{color:rgba(255,255,255,0.6)}
+.pc-price{font-family:'Fraunces',serif;font-size:3rem;font-weight:700;line-height:1;color:var(--ink);margin-bottom:4px}
+.featured .pc-price{color:white}
+.pc-was{font-size:13px;color:var(--muted);text-decoration:line-through;margin-bottom:20px}
+.featured .pc-was{color:rgba(255,255,255,0.4)}
+.pc-save{display:inline-block;background:rgba(232,83,26,0.1);color:var(--saffron);font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:8px;text-decoration:none}
+.featured .pc-save{background:rgba(255,255,255,0.15);color:#FFD166}
+.pc-divider{border:none;border-top:1px solid var(--border);margin:0 0 18px}
+.featured .pc-divider{border-color:rgba(255,255,255,0.12)}
+.pc-features{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:24px}
+.pc-features li{font-size:13px;display:flex;gap:10px;align-items:flex-start;line-height:1.5;color:var(--ink)}
+.featured .pc-features li{color:rgba(255,255,255,0.85)}
+.pc-features .yes{color:var(--green);font-size:14px;flex-shrink:0}
+.pc-features .no{color:var(--border2);font-size:14px;flex-shrink:0}
+.featured .pc-features .yes{color:#7FFFC4}
+.pc-btn{width:100%;padding:13px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1.5px solid var(--saffron);background:var(--saffron);color:white;transition:all 0.2s;font-family:'Outfit',sans-serif;margin-top:auto}.pc-btn:hover{background:var(--paper2);border-color:var(--ink)}
+.pc-btn.solid{background:var(--saffron);color:rgb(255, 255, 255);border-color:var(--saffron)}
+.pc-btn.solid:hover{background:var(--saffron-light)}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.review-card{background:white;border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color 0.2s}
+.review-card:hover{border-color:var(--border2)}
+.rv-stars{color:#F59E0B;font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.rv-text{font-size:13px;color:var(--ink);line-height:1.75;margin-bottom:16px;font-weight:300;font-style:italic}
+.rv-author{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--border)}
+.rv-avatar{width:40px;height:40px;border-radius:50%;background:var(--green-screen);border:2px solid var(--green-screen-dark);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0;overflow:hidden;flex-shrink:0;position:relative}
+.av-head{width:14px;height:14px;border-radius:50%;background:rgba(0,120,40,0.55);margin-bottom:2px;flex-shrink:0}
+.av-body{width:22px;height:11px;border-radius:11px 11px 0 0;background:rgba(0,120,40,0.55);flex-shrink:0}
+.rv-name{font-size:13px;font-weight:600;color:var(--ink)}
+.rv-detail{font-size:11px;color:var(--muted)}
+.rv-badge{font-size:10px;color:var(--green);font-weight:600;margin-top:2px}
+
+/* FAQ */
+.faq-wrap{max-width:680px;margin:48px auto 0}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;cursor:pointer;text-align:left;font-family:'Outfit',sans-serif}
+.faq-q{font-size:15px;font-weight:500;color:var(--ink)}
+.faq-arrow{font-size:18px;color:var(--saffron);transition:transform 0.25s;flex-shrink:0}
+.faq-btn.open .faq-arrow{transform:rotate(180deg)}
+.faq-ans{font-size:14px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;font-weight:300}
+.faq-ans.open{max-height:160px;padding-bottom:20px}
+
+/* FINAL CTA */
+.final-cta{background:var(--ink);color:white;padding:80px 8%;text-align:center}
+.final-cta h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;letter-spacing:-1.5px;margin-bottom:14px;line-height:1.1}
+.final-cta h2 em{color:var(--saffron-light);font-style:italic}
+.final-cta p{font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:36px;font-weight:300}
+.final-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--paper2);border-top:1px solid var(--border);padding:28px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:'Fraunces',serif;font-size:17px;font-weight:900;color:var(--ink)}
+.footer-logo em{color:var(--saffron);font-style:normal}
+footer p{font-size:12px;color:var(--muted)}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:999;background:#25d366;color:white;padding:12px 20px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:7px;box-shadow:0 4px 20px rgba(37,211,102,0.35);animation:floatbob 3s ease-in-out infinite;transition:box-shadow 0.2s}
+.wa-float:hover{box-shadow:0 8px 32px rgba(37,211,102,0.5);animation:none;transform:translateY(-2px)}
+@keyframes floatbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{min-height:50vw;border-left:none;border-top:1px solid var(--border);padding-bottom:80px}
+  .hero-left{padding:60px 6% 50px}
+  .preview-wrap{grid-template-columns:1fr;padding:60px 6%;gap:40px}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .price-card.featured{transform:none}
+  .reviews-grid{grid-template-columns:1fr}
+  .section{padding:60px 6%}
+}
+@media(max-width:640px){
+  .nav-link{display:none}
+  .feat-grid{grid-template-columns:1fr}
+  .hero-proof{gap:16px}
+  .gs-cards{grid-template-columns:1fr 1fr}
+}
+/* WHATS INCLUDED */
+/* WHATS INCLUDED */
+.included-section{background:var(--ink);padding:40px;border-radius:20px;margin:32px auto;max-width:600px;width:90%;border:2px solid var(--saffron)}
+.included-title{text-align:center;font-family:'Fraunces',serif;font-size:1.3rem;font-weight:900;color:#FFD166;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.included-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 48px;max-width:780px;margin:0 auto}
+.included-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:white}
+.included-item::before{content:'✔';color:#FFD166;font-size:13px;flex-shrink:0;background:rgba(255,209,102,0.15);width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center}
+@media(max-width:640px){.included-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+<strong>🎯 UPSC 2026 (Prelims + Mains) Notes Bundal — <del>₹499</del> <span>only ₹199</span></strong>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">UPSC<em>Notes</em></div>
+  <div class="nav-right">
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="#reviews" class="nav-link">Reviews</a>
+    <a href="#pricing" class="nav-btn">Buy Now →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow"> 500+ SERIOUS ASPIRANTS ALREADY INSIDE</div>
+    <h1>Toppers Ke<br><span class="accent">Secret Notes</span><br>Se Taiyari Karo</h1>
+    <p class="hero-sub">
+      मोटी किताबें पढ़ने का टाइम नहीं है? पाएं टॉपर्स के <strong>सीक्रेट हैंड-रिटन नोट्स, NCERT का निचोड़ और 30 सालों के PYQs.</strong>
+    </p>
+    <div class="cta-row">
+      <a href="#pricing" class="btn-primary">⚡ Claim 70% OFF Offer Now →</a>
+    </div>
+  </div>
+
+  <!-- HERO RIGHT — green screen + stats below it -->
+  <div class="hero-right">
+    <div class="float-badge fb-top">
+      📄 Instant PDF Delivery
+      <span>5 min mein WhatsApp pe</span>
+    </div>
+    <div class="gs-frame">
+      <div class="c3"></div><div class="c4"></div>
+      <div style="font-size:40px;opacity:0.5">📚</div>
+      <div class="gs-text"></main></div>
+      <div class="gs-sub">main.jpg</div>
+    </div>
+    <div class="float-badge fb-bot">
+      ✅ Trusted by 500+ Students
+      <span>Real results, real reviews</span>
+    </div>
+
+    <!-- STATS — moved here, pinned at bottom of hero-right -->
+    <div class="hero-proof">
+      <div class="proof-item">
+        <span class="proof-num" data-target="500" data-suffix="+">0</span>
+        <span class="proof-label">Students</span>
+      </div>
+      <div class="proof-div"></div>
+      <div class="proof-item">
+        <span class="proof-num" data-target="4.9" data-decimal="1" data-suffix="★">0</span>
+        <span class="proof-label">Rating</span>
+      </div>
+      <div class="proof-div"></div>
+      <div class="proof-item">
+        <span class="proof-num" data-target="12" data-suffix="+">0</span>
+        <span class="proof-label">Subjects</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- WHATS INCLUDED -->
+<div class="included-section">
+  <div class="included-title">⭐ What's Included?</div>
+  <div class="included-grid">
+    <div class="included-item">GS Paper 1–4 Complete Coverage</div>
+    <div class="included-item">All Subjects Complete Notes</div>
+    <div class="included-item">30+ Years PYQ</div>
+    <div class="included-item">Important Standard Books</div>
+    <div class="included-item">Prelims + Mains + CSAT</div>
+    <div class="included-item">Complete Prelims Notes</div>
+    <div class="included-item">Mind Map Notes</div>
+    <div class="included-item">Mains Notes & Answer Writing</div>
+    <div class="included-item">NCERT Notes (Class 6–12)</div>
+    <div class="included-item">Test Series</div>
+    <div class="included-item">Subject-wise PYQ</div>
+    <div class="included-item">Current Affairs Included</div>
+  </div>
+</div>
+
+<!-- TIMER BAR REMOVED -->
+
+<!-- NOTES PREVIEW -->
+<div class="preview-wrap" id="features">
+  <div class="gs-cards">
+   
+  </div>
+  <div>
+    <div class="sec-label">Notes Preview</div>
+    <div class="sec-title">Humare notes<br>dusaro se alag kyo?</div>
+    <ul class="preview-list" style="margin-top:28px">
+      <li class="preview-item">
+        <div class="pi-num">1</div>
+        <div class="pi-text">Kam padho,  yaad zyada rakho
+          <small>Sirf wahi content jo UPSC ne last 30 saal mein poocha — ek line bhi extra nahi</small>
+        </div>
+      </li>
+      <li class="preview-item">
+        <div class="pi-num">2</div>
+        <div class="pi-text">Mind maps se revision 3x faster
+          <small>Mind maps se bade topics bhi 10 minute mein dimaag mein fit ho jaate hain</small>
+        </div>
+      </li>
+      <li class="preview-item">
+        <div class="pi-num">3</div>
+        <div class="pi-text">PYQ 2011–2025 integrated — pattern seedha dikhta hai
+          <small>UPSC repeat karta hai — ye notes usi pe based hain</small>
+        </div>
+      </li>
+      <li class="preview-item">
+        <div class="pi-num">4</div>
+        <div class="pi-text">Monthly current affairs — lifetime update
+          <small>Ek baar buy karo, fresh content milta rahega</small>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FEATURES -->
+<div class="features-bg">
+  <div class="section">
+    <div class="sec-label">Why Choose Us</div>
+    <div class="sec-title">Everything You Need. One Place.</div>
+    <div class="feat-grid">
+      <div class="feat-cell">
+        <span class="feat-icon">📄</span>
+        <div class="feat-name">PDF — Printable</div>
+        <div class="feat-desc">A4 optimized. Mobile, laptop, print — sab pe perfect dikhta hai.</div>
+      </div>
+      <div class="feat-cell">
+        <span class="feat-icon">🌐</span>
+        <div class="feat-name">Hindi + English</div>
+        <div class="feat-desc">Apni language chunlo. Dono medium fully available hain.</div>
+      </div>
+      <div class="feat-cell">
+        <span class="feat-icon">🗺️</span>
+        <div class="feat-name">Mind Maps</div>
+        <div class="feat-desc">Complex topics simple diagrams mein. Revision fast, marks zyada.</div>
+      </div>
+      <div class="feat-cell">
+        <span class="feat-icon">📌</span>
+        <div class="feat-name">PYQ Integrated</div>
+        <div class="feat-desc">Har topic ke saath 2011–2024 ke previous year questions.</div>
+      </div>
+      <div class="feat-cell">
+        <span class="feat-icon">🔄</span>
+        <div class="feat-name">Monthly Updates</div>
+        <div class="feat-desc">Current affairs regular milti hai. Always fresh, always relevant.</div>
+      </div>
+      <div class="feat-cell">
+        <sp
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<div class="section" id="pricing">
+  <div style="text-align:center">
+    <div class="sec-label" style="text-align:center">Pricing</div>
+    <div class="sec-title" style="text-align:center;max-width:100%">Apna Selection Pack Chuno 🎯</div>
+    <p style="font-size:15px;color:var(--muted);margin-top:8px;font-weight:300">Available in Both Hindi & English Mediums</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="lang-flag flag-hi">🇮🇳 Hindi Medium</div>
+      <div class="pc-name">Hindi Pack</div>
+      <div class="pc-price">₹199</div>
+      <div class="pc-was">₹499 &nbsp;<span class="pc-save">SAVE 60%</span></div>
+      <hr class="pc-divider">
+      <ul class="pc-features">
+        <li><span class="yes">✓</span> GS 1-4 — Hindi mein complete</li>
+        <li><span class="yes">✓</span> Mind maps — Hindi labels</li>
+        <li><span class="yes">✓</span> Current affairs — Hindi</li>
+        <li><span class="yes">✓</span> PDF unlimited download</li>
+        <li><span class="yes">✓</span> WhatsApp support</li>
+        
+      </ul>
+      <button class="pc-btn" onclick="window.location.href='https://wa.me/919999999999?text=Hindi+Pack+lena+hai'">BUY NOW HINDI VERSION →</button>
+    </div>
+    <div class="price-card featured">
+      <div class="best-tag">⭐ SABSE POPULAR</div>
+      <div class="lang-flag">🌐 Hindi + English</div>
+      <div class="pc-name">Complete Bundle</div>
+      <div class="pc-price">₹299</div>
+      <div class="pc-was">₹999 &nbsp;<span class="pc-save">SAVE 70%</span></div>
+      <hr class="pc-divider">
+      <ul class="pc-features">
+        <li><span class="yes">✓</span> GS 1-4 — Hindi + English dono</li>
+        <li><span class="yes">✓</span> Bilingual glossary included</li>
+        <li><span class="yes">✓</span> Mind maps — dono bhasha</li>
+        <li><span class="yes">✓</span> 6 months current affairs</li>
+        <li><span class="yes">✓</span> Monthly free updates</li>
+        <li><span class="yes">✓</span> Priority WhatsApp support</li>
+      </ul>
+      <button class="pc-btn solid" onclick="window.location.href='https://wa.me/919999999999?text=Complete+Bundle+lena+hai'">Best Value — Buy Karo →</button>
+    </div>
+    <div class="price-card">
+      <div class="lang-flag flag-en">🇬🇧 English Medium</div>
+      <div class="pc-name">English Pack</div>
+      <div class="pc-price">₹199</div>
+      <div class="pc-was">₹499 &nbsp;<span class="pc-save">SAVE 60%</span></div>
+      <hr class="pc-divider">
+      <ul class="pc-features">
+        <li><span class="yes">✓</span> GS 1-4 — English mein complete</li>
+        <li><span class="yes">✓</span> Mind maps — English labels</li>
+        <li><span class="yes">✓</span> Current affairs — English</li>
+        <li><span class="yes">✓</span> PDF unlimited download</li>
+        <li><span class="yes">✓</span> WhatsApp support</li>
+        <li><span class="no">–</span> Hindi version nahi</li>
+      </ul>
+      <button class="pc-btn" onclick="window.location.href='https://wa.me/919999999999?text=English+Pack+lena+hai'">English Pack Buy Karo →</button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:20px">⚡ instand access &nbsp;|&nbsp; lifetime support</p>
+</div>
+
+<hr class="divider">
+
+<!-- REVIEWS -->
+<div class="section" id="reviews">
+  <div class="sec-label">SUCCESS STORIES</div>
+  <div class="sec-title">Trusted by 500+ UPSC Aspirants<br></div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="rv-stars">★★★★★</div>
+      <div class="rv-text">The Polity notes are absolutely top-notch. The mind maps accelerated my revision immensely, helping me score high in Prelims. Highly recommended for quick retention</div>
+      <div class="rv-author">
+        <div class="rv-avatar"><div class="av-head"></div><div class="av-body"></div></div>
+        <div>
+          <div class="rv-name">Arjun Kumar</div>
+          <div class="rv-detail">Lucknow, UP</div>
+          <div class="rv-badge">✓ Prelims 2024 Cleared</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="rv-stars">★★★★★</div>
+      <div class="rv-text">I opted for the Bilingual Maha-Bundle. The content is exceptionally well-structured. Plus, their instant WhatsApp support makes the preparation journey so much easier</div>
+      <div class="rv-author">
+        <div class="rv-avatar"><div class="av-head"></div><div class="av-body"></div></div>
+        <div>
+          <div class="rv-name">Priya Sharma</div>
+          <div class="rv-detail">Jaipur, Rajasthan</div>
+          <div class="rv-badge">✓ 3rd Attempt Success</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="rv-stars">★★★★★</div>
+      <div class="rv-text">Complete Bundle liya — dono bhasha mein notes hain. Economy aur IR particularly best hain. WhatsApp pe bhi turant reply milta hai.</div>
+      <div class="rv-author">
+        <div class="rv-avatar"><div class="av-head"></div><div class="av-body"></div></div>
+        <div>
+          <div class="rv-name">Rahul Verma</div>
+          <div class="rv-detail">Patna, Bihar</div>
+          <div class="rv-badge">✓ Mains 2024 Qualified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<div class="section" id="faq" style="max-width:900px">
+  <div style="text-align:center">
+    <div class="sec-label" style="text-align:center">FAQ</div>
+    <div class="sec-title" style="text-align:center;max-width:100%">Got Questions? We’ve Got Answers.</div>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">
+        <span class="faq-q">What are the available payment methods?</span>
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-ans">We accept all major, 100% secure payment methods including UPI (Google Pay, PhonePe, Paytm), Credit/Debit Cards, and Net Banking. Once the payment is successful, you will instantly receive the PDF link on your WhatsApp</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">
+        <span class="faq-q">I need notes in both Hindi and English. Which pack should I buy?</span>
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-ans">we highly recommend choosing the "Complete Maha-Bundle" (Most Popular). For just ₹299, you get unlimited access to both Hindi and English mediums, along with exclusive bonuses like free current affairs updates</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">
+        <span class="faq-q">Is there a limit on how many times I can download the PDFs?</span>
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-ans">Not at all! Once purchased, you get Lifetime Access with unlimited downloads. You can view, download, or print the PDFs anytime from your mobile, tablet, or laptop without any restrictions.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">
+        <span class="faq-q">Are these notes useful for State PSC exams as well?</span>
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-ans">Absolutely. Since the UPSC syllabus forms the core foundation for most state exams (like UPPCS, BPSC, RPSC, and MPPCS), these highly curated, subject-wise notes are extremely effective for cracking your State PSC exams too.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Your Dream IAS Rank Awaits. Start Your Preparation Today</em></h3>
+  <p>Join 500+ serious aspirants who have already upgraded their prep. Our entire team wishes you a bright future and immense success in your UPSC journey</p>
+  <div class="final-btns">
+    <a href="#pricing" class="btn-primary" style="font-size:16px;padding:16px 40px">Explore Bundles & Grab 70% OFF</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">UPSC<em>Notes</em></div>
+  <p>©🇮🇳 Crafted with ❤️ in India for Future IAS Officers</p>
+  <p>© 2026 UPSCNotes. All Rights Reserved.
+Disclaimer: UPSCNotes is an independent educational platform and is not affiliated with the official UPSC commission. </a></p>
+</footer>
+
+<script>
+// ── COUNT UP ANIMATION ──
+function runCountUp(){
+  document.querySelectorAll('.proof-num[data-target]').forEach(el=>{
+    if(el.dataset.done) return;
+    el.dataset.done='1';
+    const target=parseFloat(el.dataset.target);
+    const dec=parseInt(el.dataset.decimal||0);
+    const suffix=el.dataset.suffix||'';
+    const dur=1800, steps=60;
+    let count=0;
+    const inc=target/steps;
+    let cur=0;
+    const timer=setInterval(()=>{
+      count++;
+      cur=Math.min(cur+inc,target);
+      el.textContent=cur.toFixed(dec)+suffix;
+      if(count>=steps){
+        el.textContent=target.toFixed(dec)+suffix;
+        clearInterval(timer);
+      }
+    },dur/steps);
+  });
+}
+
+window.addEventListener('load', runCountUp);
+
+// ── FAQ ──
+function faq(btn){
+  const ans=btn.nextElementSibling;
+  const isOpen=ans.classList.contains('open');
+  document.querySelectorAll('.faq-ans').forEach(a=>a.classList.remove('open'));
+  document.querySelectorAll('.faq-btn').forEach(b=>b.classList.remove('open'));
+  if(!isOpen){ans.classList.add('open');btn.classList.add('open')}
+}
+</script>
+</body>
+</html>
