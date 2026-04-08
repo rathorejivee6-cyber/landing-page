@@ -17,5 +17,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/html
-            git pull origin main
+            git fetch --all
+            git reset --hard origin/main
             cp "landing-page (1).html" index.html
