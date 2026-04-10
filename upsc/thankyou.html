@@ -3,168 +3,291 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Successful - Download Notes</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Payment Successful — UPSC Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel — Purchase Event -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1591605798613266');
+fbq('track', 'PageView');
+fbq('track', 'Purchase', {
+value: 0,
+currency: 'INR',
+content_name: 'UPSC Notes',
+content_type: 'product'});
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1591605798613266&ev=Purchase&noscript=1"/>
+</noscript>
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  
-  /* तेरे लैंडिंग पेज के सेम कलर्स */
-  :root {
-    --ink: #0D0D0D;
-    --ink2: #1A1A1A;
-    --saffron: #E8531A;
-    --saffron-light: #FF6B35;
-    --green-screen: #00B140;
-    --muted: #6B6B6B;
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0D0D0D;
+  --saffron:#E8531A;
+  --saffron-light:#FF6B35;
+  --gold:#FFD166;
+  --green:#00B140;
+  --muted:#888;
+}
+html,body{height:100%;overflow-x:hidden}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--ink);
+  color:white;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%,rgba(232,83,26,0.08) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 80%,rgba(0,177,64,0.06) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+}
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;z-index:0;
+}
 
-  body {
-    font-family: 'Outfit', sans-serif;
-    background: var(--ink); /* डार्क प्रीमियम बैकग्राउंड */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+/* CONFETTI */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.p{position:absolute;width:6px;height:6px;border-radius:1px;animation:fall linear infinite;opacity:0}
+@keyframes fall{
+  0%{transform:translateY(-20px) rotate(0deg);opacity:1}
+  100%{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
 
-  .ty-container {
-    background: var(--ink2);
-    border: 2px solid rgba(232, 83, 26, 0.3); /* हल्का सैफ्रन बॉर्डर */
-    padding: 50px 40px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 480px;
-    width: 90%;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    position: relative;
-  }
+/* CARD */
+.card{
+  position:relative;z-index:2;
+  width:90%;max-width:500px;
+  padding:52px 44px 44px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  text-align:center;
+  backdrop-filter:blur(20px);
+  animation:rise 0.6s cubic-bezier(0.22,1,0.36,1) both;
+}
+@keyframes rise{
+  from{opacity:0;transform:translateY(32px) scale(0.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.card::before{
+  content:'';position:absolute;top:0;left:10%;right:10%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--saffron),var(--gold),var(--saffron),transparent);
+  border-radius:0 0 2px 2px;
+}
 
-  .success-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(0, 177, 64, 0.1);
-    color: var(--green-screen);
-    font-size: 40px;
-    line-height: 80px;
-    border-radius: 50%;
-    margin: 0 auto 24px;
-    border: 2px solid var(--green-screen);
-  }
+/* ICON */
+.icon-wrap{
+  width:72px;height:72px;border-radius:50%;
+  background:rgba(0,177,64,0.1);border:1.5px solid rgba(0,177,64,0.4);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 28px;
+  animation:pop 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.3s both;
+}
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.icon-wrap svg{width:32px;height:32px}
 
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
-  }
+/* TEXT */
+.tag{
+  display:inline-block;font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);background:rgba(255,209,102,0.1);
+  border:1px solid rgba(255,209,102,0.2);
+  padding:4px 14px;border-radius:20px;margin-bottom:16px;
+  animation:fadein 0.5s 0.4s both;
+}
+h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2rem,6vw,2.8rem);font-weight:900;
+  line-height:1.1;letter-spacing:-1px;margin-bottom:14px;
+  animation:fadein 0.5s 0.5s both;
+}
+h1 em{color:var(--saffron);font-style:italic}
+.subtitle{
+  font-size:15px;color:rgba(255,255,255,0.55);
+  font-weight:300;line-height:1.7;
+  max-width:360px;margin:0 auto 32px;
+  animation:fadein 0.5s 0.6s both;
+}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
-  h1 em {
-    color: var(--saffron);
-    font-style: italic;
-  }
+/* QUOTE */
+.quote{
+  background:rgba(255,209,102,0.06);
+  border-left:3px solid var(--gold);
+  border-radius:0 10px 10px 0;
+  padding:16px 20px;margin-bottom:32px;text-align:left;
+  animation:fadein 0.5s 0.7s both;
+}
+.quote p{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;font-style:italic;font-weight:300}
+.quote-author{margin-top:10px;font-size:12px;color:var(--gold);font-weight:600;letter-spacing:0.5px}
 
-  .sub-text {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 300;
-    margin-bottom: 30px;
-    line-height: 1.6;
-  }
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;text-align:left;animation:fadein 0.5s 0.75s both}
+.step{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:10px;padding:14px 16px;
+}
+.step-num{
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(232,83,26,0.15);border:1px solid rgba(232,83,26,0.3);
+  color:var(--saffron);font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.step-text{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5}
+.step-text strong{color:white;font-weight:600;display:block;margin-bottom:1px}
 
-  .wishes-box {
-    background: rgba(255, 209, 102, 0.1);
-    border-left: 4px solid #FFD166;
-    padding: 18px 20px;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 36px;
-    font-size: 15px;
-    color: #FFD166;
-    text-align: left;
-    font-style: italic;
-    line-height: 1.6;
-  }
+/* BUTTON */
+.btn-download{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;background:var(--saffron);color:white;
+  padding:18px;border-radius:12px;
+  font-size:17px;font-weight:700;
+  text-decoration:none;letter-spacing:0.3px;
+  transition:all 0.2s;position:relative;overflow:hidden;
+  animation:fadein 0.5s 0.85s both;
+}
+.btn-download::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.12) 0%,transparent 60%)}
+.btn-download:hover{background:var(--saffron-light);transform:translateY(-2px);box-shadow:0 12px 32px rgba(232,83,26,0.35)}
+.btn-arrow{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:14px}
 
-  .btn-download {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    background: var(--saffron);
-    color: white;
-    padding: 18px 0;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.2s;
-    box-shadow: 0 8px 20px rgba(232, 83, 26, 0.3);
-  }
+/* SUPPORT */
+.support{margin-top:22px;font-size:12px;color:rgba(255,255,255,0.3);animation:fadein 0.5s 0.9s both}
+.support a{color:rgba(255,255,255,0.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2)}
+.support a:hover{color:white}
 
-  .btn-download:hover {
-    background: var(--saffron-light);
-    transform: translateY(-3px);
-  }
+/* LOGO */
+.logo{font-family:'Fraunces',serif;font-size:15px;font-weight:900;color:rgba(255,255,255,0.3);letter-spacing:-0.3px;margin-bottom:28px;animation:fadein 0.5s 0.2s both}
+.logo em{color:var(--saffron);font-style:normal;opacity:0.8}
 
-  .support-text {
-    margin-top: 30px;
-    font-size: 13px;
-    color: var(--muted);
-  }
+/* WA FLOAT */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:99;
+  background:#25d366;width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.4);
+  transition:transform 0.2s,box-shadow 0.2s;
+  animation:floatbob 3s ease-in-out infinite;
+}
+.wa-float:hover{transform:scale(1.1) !important;box-shadow:0 8px 30px rgba(37,211,102,0.5);animation:none}
+@keyframes floatbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 
-  .support-text span {
-    color: white;
-    font-weight: 500;
-  }
-
-  /* तेरा वाला WhatsApp Float */
-  .wa-fab {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 999;
-    background: #25d366;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-    transition: transform 0.2s;
-  }
-  .wa-fab:hover { transform: scale(1.1); }
+@media(max-width:480px){
+  .card{padding:36px 24px 32px}
+  h1{font-size:1.9rem}
+  .btn-download{font-size:15px;padding:16px}
+}
 </style>
 </head>
 <body>
 
-  <div class="ty-container">
-    <div class="success-icon">✔</div>
+<div class="particles" id="particles"></div>
 
-    <h1>Payment <em>Successful!</em></h1>
-    <p class="sub-text">Welcome to the elite club of serious UPSC aspirants. Your premium notes are ready.</p>
+<div class="card">
 
-    <div class="wishes-box">
-      "Our entire team wishes you a very bright future. May you achieve all your goals and be highly successful in your endeavors."
-    </div>
+  <div class="logo">UPSC<em>Notes</em></div>
 
-    <a href="https://whatsapp.com/channel/0029VbAUTmuHbFV9vDeabq0Z" class="btn-download" target="_blank">
-      📥 DOWNLOAD NOW
-    </a>
-
+  <div class="icon-wrap">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="14" stroke="#00B140" stroke-width="1.5" fill="rgba(0,177,64,0.1)"/>
+      <path d="M9 16.5L13.5 21L23 11" stroke="#00B140" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
   </div>
 
-  <a href="https://wa.me/919131420617?text=Hi,%20I%20have%20an%20issue%20with%20my%20download." class="wa-fab" target="_blank">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30" height="30">
-      <path fill="#fff" d="M24 4C13 4 4 13 4 24c0 3.6 1 7 2.7 9.9L4 44l10.4-2.7C17.2 43 20.5 44 24 44c11 0 20-9 20-20S35 4 24 4z"/>
-      <path fill="#25d366" d="M24 7c9.4 0 17 7.6 17 17S33.4 41 24 41c-3.1 0-6-.8-8.5-2.3l-.6-.4-6.2 1.6 1.7-6-.4-.6C8.8 30.2 7 27.2 7 24 7 14.6 14.6 7 24 7z"/>
-      <path fill="#fff" d="M19.4 16c-.3-.7-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.4-1.4 3.3s1.5 3.9 1.7 4.1c.2.3 2.8 4.5 6.9 6.1 3.4 1.4 4.1 1.1 4.8 1 .7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5s-2.3-1.1-2.6-1.3c-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.8-.7-3.4-2.1-1.3-1.1-2.1-2.5-2.4-2.9-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3 0-.6-.1-.8l-1.1-2.7z"/>
-    </svg>
+  <div class="tag">Payment Confirmed ✦</div>
+
+  <h1>Welcome to the<br><em>Topper's Club!</em></h1>
+  <p class="subtitle">Tu pehle hi serious tha — ab notes bhi serious hain. Download karo aur shuru ho jao.</p>
+
+  <div class="quote">
+    <p>"Mehnat karo, notes se dosto ki tarah baat karo — aur UPSC tujhse darta rahega. Our entire team stands with you."</p>
+    <div class="quote-author">— UPSCNotes Team 🙏</div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>Neeche Download Button dabao</strong>
+        WhatsApp Channel khulega — wahan notes milenge
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Channel Join Karo</strong>
+        Sab subjects ke notes wahan pinned hain
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Padhna shuru karo aaj se</strong>
+        Koi bhi doubt ho — WhatsApp pe message karo
+      </div>
+    </div>
+  </div>
+
+  <a href="https://whatsapp.com/channel/0029VbAUTmuHbFV9vDeabq0Z"
+     class="btn-download"
+     target="_blank"
+     onclick="fbq('track','Lead')">
+    <span>📥 Notes Download Karo</span>
+    <span class="btn-arrow">→</span>
   </a>
+
+  <p class="support">
+    Koi problem? <a href="https://wa.me/919131420617?text=Hi,%20I%20have%20an%20issue%20with%20my%20download.">WhatsApp karo</a> — 5 min mein reply guaranteed
+  </p>
+
+</div>
+
+<a href="https://wa.me/919131420617?text=Hi,%20I%20have%20an%20issue%20with%20my%20download." class="wa-float" target="_blank">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="26" height="26">
+    <path fill="#fff" d="M24 4C13 4 4 13 4 24c0 3.6 1 7 2.7 9.9L4 44l10.4-2.7C17.2 43 20.5 44 24 44c11 0 20-9 20-20S35 4 24 4z"/>
+    <path fill="#25d366" d="M24 7c9.4 0 17 7.6 17 17S33.4 41 24 41c-3.1 0-6-.8-8.5-2.3l-.6-.4-6.2 1.6 1.7-6-.4-.6C8.8 30.2 7 27.2 7 24 7 14.6 14.6 7 24 7z"/>
+    <path fill="#fff" d="M19.4 16c-.3-.7-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.4-1.4 3.3s1.5 3.9 1.7 4.1c.2.3 2.8 4.5 6.9 6.1 3.4 1.4 4.1 1.1 4.8 1 .7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5s-2.3-1.1-2.6-1.3c-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.8-.7-3.4-2.1-1.3-1.1-2.1-2.5-2.4-2.9-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3 0-.6-.1-.8l-1.1-2.7z"/>
+  </svg>
+</a>
+
+<script>
+// CONFETTI
+(function(){
+  const colors=['#E8531A','#FFD166','#00B140','#FF6B35','#ffffff','#FFF0EB'];
+  const container=document.getElementById('particles');
+  for(let i=0;i<40;i++){
+    const p=document.createElement('div');
+    p.className='p';
+    p.style.cssText=`
+      left:${Math.random()*100}%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      width:${4+Math.random()*6}px;
+      height:${4+Math.random()*6}px;
+      border-radius:${Math.random()>0.5?'50%':'2px'};
+      animation-duration:${3+Math.random()*5}s;
+      animation-delay:${Math.random()*4}s;
+    `;
+    container.appendChild(p);
+  }
+})();
+</script>
 
 </body>
 </html>
