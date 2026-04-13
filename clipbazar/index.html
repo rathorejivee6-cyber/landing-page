@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> 6000+ Movie Clips Bundle | FB & YouTube Viral करो!</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #ff6b00;
+  --yellow: #ffd000;
+  --red: #e01a1a;
+  --green: #00c853;
+  --dark: #0a0a12;
+  --card: #13131f;
+  --card2: #1a1a2e;
+  --white: #ffffff;
+  --text-dim: rgba(255,255,255,0.55);
+  --border: rgba(255,255,255,0.08);=
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--dark); color:#fff; font-family:'Noto Sans Devanagari',sans-serif; overflow-x:hidden; }
+
+/* URGENCY BAR */
+.urgency-bar {
+  background: linear-gradient(90deg,#c41000,#ff4800,#ff8c00,#ff4800,#c41000);
+  background-size:300% 100%;
+  animation:gradShift 4s linear infinite;
+  text-align:center; padding:9px 16px;
+  font-size:13px; font-weight:700; letter-spacing:.5px;
+  font-family:'Baloo 2',sans-serif; line-height:1.4;
+}
+@keyframes gradShift{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+
+/* HEADER */
+header {
+  background:rgba(10,10,18,0.97);
+  backdrop-filter:blur(12px);
+  border-bottom:2px solid rgba(255,107,0,0.4);
+  padding:13px 20px;
+  position:sticky; top:0; z-index:200;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo { font-family:'Baloo 2',sans-serif; font-size:20px; font-weight:900; color:var(--yellow); letter-spacing:.5px; }
+.logo span { color:var(--orange); }
+.nav-links { display:flex; gap:6px; }
+.nav-links a {
+  font-size:11px; font-weight:700; color:rgba(255,255,255,0.55);
+  text-decoration:none; padding:5px 10px;
+  border:1px solid rgba(255,107,0,0.2);
+  border-radius:20px; transition:.2s; letter-spacing:.3px;
+}
+.nav-links a.cta-nav { background:linear-gradient(135deg,#ff6b00,#ffd000); color:#000; border-color:transparent; }
+.nav-links a:hover:not(.cta-nav) { border-color:rgba(255,107,0,0.5); color:#fff; }
+
+/* HERO */
+.hero {
+  background:linear-gradient(170deg,#0a0a12 0%,#140830 55%,#0a0a12 100%);
+  padding:44px 20px 36px;
+  text-align:center; position:relative; overflow:hidden;
+}
+.hero::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 80% 70% at 50% 30%, rgba(255,107,0,0.1) 0%, transparent 70%);
+}
+.fire-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  background:linear-gradient(135deg,#c41000,#ff4800);
+  color:#fff; font-size:12px; font-weight:800;
+  padding:7px 20px; border-radius:50px;
+  margin-bottom:18px; letter-spacing:1px;
+  font-family:'Baloo 2',sans-serif;
+  animation:badgePulse 2.5s ease-in-out infinite; position:relative;
+}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(255,72,0,0.4)}50%{box-shadow:0 0 0 10px rgba(255,72,0,0)}}
+.hero-h1 {
+  font-family:'Baloo 2',sans-serif;
+  font-size:clamp(24px,6.5vw,46px); font-weight:900; line-height:1.25;
+  margin-bottom:14px; position:relative;
+}
+.hero-h1 .y { color:var(--yellow); }
+.hero-h1 .o { color:var(--orange); }
+.hero-sub {
+  font-size:clamp(14px,3.5vw,18px);
+  color:rgba(255,255,255,0.72); line-height:1.65;
+  max-width:580px; margin:0 auto 28px;
+}
+.hero-sub b { color:var(--yellow); }
+
+/* PRODUCT MOCKUP */
+.product-mockup { position:relative; max-width:300px; margin:0 auto 28px; }
+.product-glow {
+  background:linear-gradient(135deg,#0f1f0f,#1a2e1a);
+  border:2px solid rgba(0,200,83,0.35); border-radius:18px; padding:30px 24px;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  box-shadow:0 0 40px rgba(0,200,83,0.12), 0 0 80px rgba(255,107,0,0.06);
+}
+.product-glow .label { font-size:10px; letter-spacing:3px; color:rgba(0,200,83,0.5); font-weight:700; }
+.product-glow .icon { font-size:56px; line-height:1; }
+.product-glow .note { font-size:11px; color:rgba(0,200,83,0.35); }
+.product-badge {
+  position:absolute; top:-10px; right:-10px;
+  background:linear-gradient(135deg,#e01a1a,#ff6b00);
+  color:#fff; font-size:10px; font-weight:800;
+  padding:6px 14px; border-radius:50px;
+  font-family:'Baloo 2',sans-serif; letter-spacing:1px; white-space:nowrap;
+}
+
+/* STATS */
+.stats-row {
+  display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+  margin:0 auto 28px; max-width:560px;
+}
+.stat-box {
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px; padding:14px 20px; text-align:center; flex:1; min-width:120px;
+}
+.stat-num { font-family:'Baloo 2',sans-serif; font-size:28px; font-weight:900; color:var(--yellow); line-height:1; display:block; }
+.stat-lbl { font-size:11px; color:var(--text-dim); margin-top:3px; letter-spacing:.5px; }
+
+/* INSIDE LIST */
+.inside-card {
+  background:rgba(255,255,255,0.03); border:1px solid var(--border);
+  border-radius:16px; max-width:480px; margin:0 auto 28px; padding:20px 22px; text-align:left;
+}
+.inside-card h3 { font-family:'Baloo 2',sans-serif; font-size:16px; font-weight:800; color:var(--yellow); margin-bottom:14px; text-align:center; }
+.inside-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.inside-list li { font-size:14px; display:flex; align-items:center; gap:10px; color:rgba(255,255,255,0.82); }
+.inside-list li::before { content:'✅'; flex-shrink:0; font-size:13px; }
+
+/* BUY BTN */
+.buy-btn {
+  display:inline-block;
+  background:linear-gradient(135deg,#ff6b00,#ffd000);
+  color:#000; font-weight:900; font-family:'Baloo 2',sans-serif;
+  font-size:18px; letter-spacing:.5px; padding:16px 42px;
+  border-radius:50px; text-decoration:none; border:none; cursor:pointer;
+  transition:transform .2s; animation:btnGlow 2.2s ease-in-out infinite;
+}
+.buy-btn:hover { transform:translateY(-3px) scale(1.02); }
+@keyframes btnGlow{0%,100%{box-shadow:0 0 30px rgba(255,107,0,0.45)}50%{box-shadow:0 0 55px rgba(255,107,0,0.75)}}
+.price-strike { font-size:12px; color:rgba(255,255,255,0.35); text-decoration:line-through; margin-top:8px; }
+
+/* TRUST */
+.trust-row { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:18px auto; max-width:560px; }
+.tbadge {
+  background:rgba(0,200,83,0.1); border:1px solid rgba(0,200,83,0.3);
+  border-radius:50px; padding:7px 14px; font-size:12px; color:#00e054; font-weight:700;
+}
+
+/* COUNTDOWN */
+.countdown-wrap {
+  background:linear-gradient(135deg,#1a0800,#271100); border:2px solid var(--orange);
+  border-radius:16px; max-width:420px; margin:22px auto 0; padding:20px 16px; text-align:center;
+}
+.cd-title { font-size:13px; font-weight:700; color:var(--orange); letter-spacing:1.5px; margin-bottom:14px; }
+.timer { display:flex; justify-content:center; align-items:center; gap:8px; }
+.time-box {
+  background:#0a0a12; border:1px solid rgba(255,107,0,0.5);
+  border-radius:10px; padding:10px 14px; min-width:64px; text-align:center;
+}
+.time-num { font-family:'Baloo 2',sans-serif; font-size:32px; font-weight:900; color:var(--yellow); line-height:1; }
+.time-lbl { font-size:9px; color:rgba(255,255,255,0.35); letter-spacing:2px; margin-top:2px; }
+.colon { font-size:30px; font-weight:900; color:var(--orange); margin-bottom:12px; }
+
+/* SECTION */
+.section { padding:48px 20px; max-width:780px; margin:0 auto; }
+.sec-badge {
+  display:inline-block; background:var(--orange); color:#fff;
+  font-size:10px; font-weight:800; padding:4px 14px; border-radius:4px;
+  letter-spacing:2px; margin-bottom:12px; text-transform:uppercase;
+}
+.sec-title { font-family:'Baloo 2',sans-serif; font-size:clamp(21px,5vw,34px); font-weight:900; line-height:1.25; margin-bottom:6px; }
+.sec-title .y { color:var(--yellow); }
+.sec-sub { font-size:14px; color:var(--text-dim); margin-bottom:28px; line-height:1.6; }
+.swipe-hint { font-size:11px; color:rgba(255,255,255,0.25); margin-bottom:12px; letter-spacing:1px; }
+
+/* ===== PRICING SLIDER ===== */
+.pricing-section { padding:52px 0; text-align:center; background:linear-gradient(180deg,#0a0a12,#100a20,#0a0a12); }
+.pricing-section .top-text { padding:0 20px; }
+.pricing-slider-wrap { position:relative; padding:20px 0 8px; }
+.pricing-slider {
+  display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+  gap:14px; padding:10px 20px 16px;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
+}
+.pricing-slider::-webkit-scrollbar { display:none; }
+.pricing-card {
+  flex:0 0 78vw; max-width:280px; scroll-snap-align:center;
+  background:linear-gradient(160deg,var(--card2),var(--card));
+  border:2px solid rgba(255,255,255,0.08);
+  border-radius:20px; padding:28px 18px 22px;
+  position:relative; display:flex; flex-direction:column; transition:border-color .2s;
+}
+.pricing-card.popular {
+  border-color:var(--orange);
+  background:linear-gradient(160deg,#1e1220,#140e1e);
+  box-shadow:0 0 40px rgba(255,107,0,0.2), 0 0 80px rgba(255,107,0,0.08);
+}
+.pop-badge {
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  background:linear-gradient(135deg,#e01a1a,#ff6b00);
+  color:#fff; font-size:10px; font-weight:900;
+  padding:5px 18px; border-radius:50px;
+  white-space:nowrap; letter-spacing:1px; font-family:'Baloo 2',sans-serif;
+}
+.plan-label { font-size:9px; letter-spacing:3px; color:var(--text-dim); margin-bottom:6px; text-transform:uppercase; }
+.plan-clips { font-family:'Baloo 2',sans-serif; font-size:26px; font-weight:900; color:#fff; margin-bottom:3px; line-height:1.2; }
+.plan-clips-sub { font-size:12px; color:var(--text-dim); margin-bottom:14px; }
+.price-row { display:flex; align-items:flex-start; justify-content:center; gap:2px; margin-bottom:4px; }
+.p-sym { font-size:20px; color:var(--yellow); font-weight:900; margin-top:10px; }
+.p-amt { font-family:'Baloo 2',sans-serif; font-size:62px; font-weight:900; color:var(--yellow); line-height:1; }
+.p-was { font-size:12px; color:rgba(255,255,255,0.25); text-decoration:line-through; margin-bottom:16px; }
+.save-pill {
+  display:inline-block; background:rgba(0,200,83,0.15); border:1px solid rgba(0,200,83,0.3);
+  color:#00c853; font-size:9px; font-weight:800;
+  padding:3px 10px; border-radius:50px; margin-bottom:14px; letter-spacing:1px;
+}
+.plan-feats-mini { list-style:none; margin-bottom:20px; display:flex; flex-direction:column; gap:8px; text-align:left; flex:1; }
+.plan-feats-mini li { font-size:12px; color:rgba(255,255,255,0.78); display:flex; align-items:flex-start; gap:8px; line-height:1.45; }
+.plan-feats-mini li::before { content:'✅'; flex-shrink:0; font-size:11px; margin-top:1px; }
+.plan-btn {
+  display:block; text-align:center; text-decoration:none;
+  background:rgba(255,255,255,0.07); border:1.5px solid rgba(255,255,255,0.15);
+  color:#fff; font-weight:800; font-size:13px; font-family:'Baloo 2',sans-serif;
+  padding:13px 10px; border-radius:50px; transition:.2s; margin-top:auto; letter-spacing:.3px;
+}
+.plan-btn:hover { background:rgba(255,255,255,0.12); }
+.pricing-card.popular .plan-btn {
+  background:linear-gradient(135deg,#ff6b00,#ffd000);
+  color:#000; border-color:transparent; font-size:14px; padding:14px 10px;
+  animation:btnGlow 2.2s ease-in-out infinite;
+}
+.slider-dots { display:flex; justify-content:center; gap:6px; margin-top:4px; }
+.slider-dots span { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.18); transition:.3s; }
+.slider-dots span.active { background:var(--orange); width:20px; border-radius:4px; }
+
+/* PROOF SLIDER */
+.proof-wrap { background:rgba(255,255,255,0.02); }
+.proof-slider {
+  display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+  gap:12px; padding-bottom:12px;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
+}
+.proof-slider::-webkit-scrollbar { display:none; }
+.proof-box {
+  flex:0 0 72vw; max-width:240px; scroll-snap-align:center;
+  background:linear-gradient(135deg,#0a1a0a,#0d1f0d);
+  border:1px solid rgba(0,179,65,0.18); border-radius:14px; aspect-ratio:9/16;
+  display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:8px;
+  font-size:12px; color:rgba(0,200,83,0.4); text-align:center; padding:16px;
+}
+.proof-box .pi { font-size:30px; margin-bottom:6px; }
+
+/* DEMO CLIPS */
+.demo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.demo-box {
+  background:linear-gradient(160deg,#0d1f0d,#0a150a);
+  border:2px dashed rgba(0,200,83,0.25); border-radius:14px; aspect-ratio:9/16;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:10px; position:relative; cursor:pointer; overflow:hidden;
+  transition:border-color .2s, transform .2s;
+}
+.demo-box:hover { border-color:rgba(0,200,83,0.6); transform:scale(1.02); }
+.demo-scanlines {
+  position:absolute; inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,200,83,0.02) 3px,rgba(0,200,83,0.02) 4px);
+}
+.demo-play {
+  width:44px; height:44px; background:rgba(0,200,83,0.15); border:2px solid rgba(0,200,83,0.5);
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:1; transition:all .2s;
+}
+.demo-box:hover .demo-play { background:rgba(0,200,83,0.28); transform:scale(1.12); }
+.demo-play svg { width:16px; height:16px; fill:#00c853; margin-left:3px; }
+.demo-tag {
+  position:absolute; top:8px; left:8px; background:#00c853; color:#001a00;
+  font-size:8px; font-weight:900; padding:2px 7px; border-radius:3px; letter-spacing:2px; z-index:2;
+}
+.demo-name { font-size:11px; font-weight:700; color:rgba(0,200,83,0.8); position:relative; z-index:1; text-align:center; padding:0 6px; }
+
+/* WHO */
+.who-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+.who-card {
+  background:linear-gradient(135deg,var(--card2),var(--card));
+  border:1px solid var(--border); border-radius:16px; padding:22px 16px; text-align:center;
+  transition:border-color .2s, transform .2s;
+}
+.who-card:hover { border-color:rgba(255,107,0,0.45); transform:translateY(-3px); }
+.who-icon { font-size:36px; margin-bottom:10px; display:block; }
+.who-title { font-family:'Baloo 2',sans-serif; font-size:16px; font-weight:800; color:#fff; margin-bottom:6px; }
+.who-desc { font-size:13px; color:var(--text-dim); line-height:1.55; }
+
+/* PLATFORM */
+.platform-row { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px; }
+.platform-pill {
+  background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+  border-radius:50px; padding:10px 20px; font-size:14px; font-weight:800;
+  display:flex; align-items:center; gap:7px; color:#fff; transition:.2s;
+}
+.platform-pill:hover { border-color:rgba(255,107,0,0.4); background:rgba(255,107,0,0.08); }
+
+/* BONUSES */
+.bonuses-wrap { background:rgba(255,255,255,0.02); padding:50px 20px; }
+.bonus-grid { display:flex; flex-direction:column; gap:14px; max-width:680px; margin:0 auto; }
+.bonus-card {
+  background:linear-gradient(135deg,var(--card2),var(--card));
+  border:1px solid rgba(255,215,0,0.15); border-radius:16px; padding:20px;
+  display:flex; align-items:center; gap:16px; transition:.2s;
+}
+.bonus-card:hover { border-color:rgba(255,215,0,0.35); }
+.bonus-icon {
+  background:linear-gradient(135deg,#1a2e1a,#0d1f0d); border:2px dashed rgba(0,200,83,0.2);
+  border-radius:12px; width:70px; height:70px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:28px;
+}
+.bonus-label { font-size:9px; letter-spacing:3px; color:var(--yellow); font-weight:700; margin-bottom:5px; text-transform:uppercase; }
+.bonus-name { font-family:'Baloo 2',sans-serif; font-size:16px; font-weight:800; color:#fff; margin-bottom:4px; }
+.bonus-desc { font-size:12px; color:rgba(255,255,255,0.42); line-height:1.55; }
+.bonus-value { font-size:11px; color:var(--green); font-weight:700; margin-top:5px; }
+
+/* REVIEWS */
+.reviews-slider {
+  display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+  gap:12px; padding-bottom:12px;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  max-width:780px; margin:0 auto;
+}
+.reviews-slider::-webkit-scrollbar { display:none; }
+.review-card {
+  flex:0 0 78vw; max-width:280px; scroll-snap-align:center;
+  background:linear-gradient(135deg,#13131f,#1a1a2e);
+  border:1px solid rgba(255,255,255,0.08); border-radius:16px;
+  padding:22px 18px; display:flex; flex-direction:column; gap:12px;
+}
+.review-stars { color:#ffd000; font-size:16px; letter-spacing:2px; }
+.review-text { font-size:14px; color:rgba(255,255,255,0.8); line-height:1.65; flex:1; }
+.review-user { display:flex; align-items:center; gap:10px; border-top:1px solid rgba(255,255,255,0.07); padding-top:12px; }
+.review-avatar {
+  width:38px; height:38px; border-radius:50%;
+  background:linear-gradient(135deg,#ff6b00,#ffd000);
+  display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0;
+}
+.review-name { font-size:13px; font-weight:700; color:#fff; }
+.review-loc { font-size:11px; color:rgba(255,255,255,0.35); margin-top:1px; }
+
+/* FAQ */
+.faq-section { padding:50px 20px; max-width:660px; margin:0 auto; }
+.faq-item {
+  background:rgba(255,255,255,0.03); border:1px solid var(--border);
+  border-radius:12px; margin-bottom:10px; overflow:hidden;
+}
+.faq-q {
+  padding:16px 20px; font-size:14px; font-weight:700; color:#fff;
+  cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+  user-select:none; gap:10px;
+}
+.faq-arrow { font-size:18px; color:var(--orange); transition:transform .3s; flex-shrink:0; }
+.faq-item.open .faq-arrow { transform:rotate(45deg); }
+.faq-a {
+  max-height:0; overflow:hidden;
+  font-size:13px; color:rgba(255,255,255,0.52); line-height:1.7;
+  transition:max-height .35s ease, padding .35s; padding:0 20px;
+}
+.faq-item.open .faq-a { max-height:200px; padding:0 20px 16px; }
+
+/* FINAL CTA */
+.final-cta {
+  background:linear-gradient(160deg,#140800,#220f00);
+  border-top:2px solid var(--orange); padding:52px 20px; text-align:center;
+}
+.final-title { font-family:'Baloo 2',sans-serif; font-size:clamp(24px,6vw,42px); font-weight:900; margin-bottom:10px; }
+.final-title .y { color:var(--yellow); }
+.final-sub { font-size:15px; color:rgba(255,255,255,0.6); margin-bottom:28px; line-height:1.6; }
+
+/* DIVIDER */
+.divider { width:48px; height:3px; background:var(--orange); border-radius:2px; margin:0 auto 20px; }
+
+/* FOOTER */
+footer { background:#060610; border-top:1px solid var(--border); padding:26px 20px; text-align:center; }
+.footer-logo { font-family:'Baloo 2',sans-serif; font-size:19px; font-weight:900; color:var(--yellow); margin-bottom:6px; }
+.footer-logo span { color:var(--orange); }
+.footer-disc { font-size:10px; color:rgba(255,255,255,0.18); max-width:560px; margin:10px auto 0; line-height:1.7; }
+
+/* RESPONSIVE */
+@media(max-width:500px) {
+  .bonus-card { flex-direction:column; text-align:center; }
+  .nav-links a:not(.cta-nav) { display:none; }
+  .timer { gap:5px; }
+  .time-box { min-width:56px; padding:9px 10px; }
+  .time-num { font-size:28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">🚨 Offer Ends Soon! (Next Price: ₹499/-)</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">🎬 Nex Gen <span>Assets</span></div>
+  <nav class="nav-links">
+    <a href="#pricing">Pricing</a>
+    <a href="#pricing" class="cta-nav">👉 BUY NOW</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="fire-badge">🔥 Internet पर सबसे बड़ा Movie Clips Bundle!</div>
+  <h1 class="hero-h1">
+    अपने Facebook / YouTube को<br>
+    <span class="y">Viral करो और Monetize करो</span><br>
+    हमारे <span class="o">Movie Clips Bundle</span> के साथ!
+  </h1>
+  <p class="hero-sub">
+    Daily 2–3 क्लिप Upload करो —<br>
+    <b>FB Bonuses & Instream Ads 30 दिनों में Unlock करो!</b>
+  </p>
+
+  <div class="product-mockup">
+    <div class="product-badge">🔥 BEST SELLER</div>
+<div class="product-glow" style="padding:0;overflow:hidden;">
+  <img src="product.jpg" alt="Movie Clips Bundle"
+       style="width:100%;border-radius:16px;display:block;">
+</div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box"><span class="stat-num" data-target="3000">0</span><span class="stat-lbl">Happy Customers</span></div>
+    <div class="stat-box"><span class="stat-num" data-target="6000">0</span><span class="stat-lbl">Clips Available</span></div>
+    <div class="stat-box"><span class="stat-num" data-target="30">0</span><span class="stat-lbl">दिन में Monetize</span></div>
+  </div>
+
+  <div class="inside-card">
+    <h3>📦 Bundle में क्या-क्या मिलेगा?</h3>
+    <ul class="inside-list">
+      <li>Hindi Movie Clips (2025 Latest)</li>
+      <li>South Dubbed Movie Clips</li>
+      <li>Action / Romantic / Horror / Comedy Clips</li>
+      <li>Old 90s Superhit Movie Clips</li>
+      <li>Web Series Clips</li>
+      <li>1000+ Pre-Made Video Titles</li>
+      <li>1000+ Viral Facebook Hashtags 2026</li>
+      <li>Facebook Viral Course A to Z (2026)</li>
+    </ul>
+  </div>
+
+  <div style="text-align:center; margin-bottom:16px;">
+    <a href="https://wa.me/91XXXXXXXXXX?text=Movie Clips Bundle order karna hai" class="buy-btn" target="_blank">
+      👉 अभी खरीदो — ₹149/- में!
+    </a>
+    <div class="price-strike">मूल कीमत ₹499/- — आज सिर्फ ₹149/-</div>
+  </div>
+
+  <div class="trust-row">
+    <span class="tbadge">✅ 100% Copyright Free</span>
+    <span class="tbadge">⚡ Instant Delivery</span>
+    <span class="tbadge">🔄 Free Replacement</span>
+    <span class="tbadge">🎁 ₹5,000 Bonuses FREE</span>
+  </div>
+
+  <div class="countdown-wrap">
+    <div class="cd-title">⏱️ OFFER Ending Soon!</div>
+    <div class="timer">
+      <div class="time-box"><div class="time-num" id="hours">23</div><div class="time-lbl">HOURS</div></div>
+      <div class="colon">:</div>
+      <div class="time-box"><div class="time-num" id="mins">59</div><div class="time-lbl">MINS</div></div>
+      <div class="colon">:</div>
+      <div class="time-box"><div class="time-num" id="secs">59</div><div class="time-lbl">SECS</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING SLIDER — Hero ke theek baad ===== -->
+<div class="pricing-section" id="pricing">
+  <div class="top-text">
+    <div class="sec-badge" style="margin-bottom:12px">💰 Pricing</div>
+    <h2 class="sec-title" style="text-align:center;margin-bottom:6px">अपना <span class="y">Bundle चुनो!</span></h2>
+    <p class="sec-sub" style="text-align:center;margin-bottom:4px">⌛ Limited Time — जल्दी करो, Price बढ़ने वाला है!</p>
+    <p class="swipe-hint" style="margin-bottom:0">👈 Swipe karke plan chuno 👉</p>
+  </div>
+
+  <div class="pricing-slider-wrap">
+    <div class="pricing-slider" id="pricingSlider">
+
+      <!-- PLAN 1 — ₹99 -->
+      <div class="pricing-card">
+        <div class="plan-label">Starter Pack</div>
+        <div class="plan-clips">1,000 movie<br>Clips</div>
+        <div class="plan-clips-sub">Bollywood + South</div>
+        <div class="save-pill">SAVE 50%</div>
+        <div class="price-row"><div class="p-sym">₹</div><div class="p-amt">99</div></div>
+        <div class="p-was">₹199/-</div>
+        <ul class="plan-feats-mini">
+          <li>1000+ HD Movie Clips</li>
+          <li>200+ Pre-Made Titles</li>
+          <li>Viral Hashtags 2026</li>
+          <li> Instant Delivery</li>
+          <li>Copyright Free (FB)</li>
+        </ul>
+        <a href="https://wa.me/91XXXXXXXXXX?text=1000 Clips ₹99 Bundle order karna hai" class="plan-btn" target="_blank">👉BUY NOW ₹99</a>
+      </div>
+
+      <!-- PLAN 2 — ₹149 (POPULAR) -->
+      <div class="pricing-card popular">
+        <div class="pop-badge">⭐Most POPULAR</div>
+        <div class="plan-label">Best Value</div>
+        <div class="plan-clips">2,000 movie<br>Clips</div>
+        <div class="plan-clips-sub">Bollywood + South + 90s</div>
+        <div class="save-pill">SAVE 70%</div>
+        <div class="price-row"><div class="p-sym">₹</div><div class="p-amt">149</div></div>
+        <div class="p-was">₹799/-</div>
+        <ul class="plan-feats-mini">
+          <li>2000+ HD Movie Clips</li>
+          <li>500+ Pre-Made Titles</li>
+          <li>1000+ Viral Hashtags</li>
+          <li>FB Viral Course A to Z</li>
+          <li> Instant Delivery</li>
+          <li>Free Replacement ✔</li>
+        </ul>
+        <a href="https://wa.me/91XXXXXXXXXX?text=2000 Clips ₹149 Bundle order karna hai" class="plan-btn" target="_blank">🔥BUY NOW ₹149</a>
+      </div>
+
+      <!-- PLAN 3 — ₹199 -->
+      <div class="pricing-card">
+        <div class="plan-label">Mega Pack</div>
+        <div class="plan-clips">5,000 Movie<br>Clips</div>
+        <div class="plan-clips-sub">All Categories</div>
+        <div class="save-pill">SAVE 80%</div>
+        <div class="price-row"><div class="p-sym">₹</div><div class="p-amt">199</div></div>
+        <div class="p-was">₹999/-</div>
+        <ul class="plan-feats-mini">
+          <li>5000+ HD Movie Clips</li>
+          <li>1000+ Pre-Made Titles</li>
+          <li>1000+ Viral Hashtags</li>
+          <li>FB + YouTube Course</li>
+          <li>25,000 Reels Bundle</li>
+          <li>Lifetime Updates ✔</li>
+        </ul>
+        <a href="https://wa.me/91XXXXXXXXXX?text=5000 Clips ₹199 Bundle order karna hai" class="plan-btn" target="_blank">👉BUY NOW ₹199</a>
+      </div>
+
+    </div>
+    <div class="slider-dots" id="pricingDots">
+      <span class="active"></span><span></span><span></span>
+    </div>
+  </div>
+
+  <p style="text-align:center;margin-top:8px;font-size:12px;color:var(--text-dim);padding:0 20px">
+    🔒 Secure Payment • ⚡ WhatsApp Instant Delivery • 🔄 Free Replacement
+  </p>
+</div>
+
+<!-- PROOF SECTION -->
+<div class="proof-wrap" id="proof">
+  <div class="section" style="text-align:center; padding-top:50px; padding-bottom:50px;">
+    <div class="sec-badge">📈 Real Proof</div>
+    <h2 class="sec-title">Page <span class="y">Monetization Proof 🔥</span></h2>
+    <p class="sec-sub">हमारे Customers के Real Results — इनकी तरह आप भी कर सकते हो!</p>
+    <p class="swipe-hint">👈 Swipe karo 👉</p>
+    <div class="proof-slider">
+      <div class="proof-box"><div class="pi">📱</div><div>Monetization Proof</div><div style="font-size:10px;margin-top:4px;color:rgba(0,200,83,0.22)">[ Screenshot Lagao ]</div></div>
+      <div class="proof-box"><div class="pi">💰</div><div>Earnings Proof</div><div style="font-size:10px;margin-top:4px;color:rgba(0,200,83,0.22)">[ Screenshot Lagao ]</div></div>
+      <div class="proof-box"><div class="pi">📊</div><div>Page Growth Proof</div><div style="font-size:10px;margin-top:4px;color:rgba(0,200,83,0.22)">[ Screenshot Lagao ]</div></div>
+      <div class="proof-box"><div class="pi">👥</div><div>Followers Growth</div><div style="font-size:10px;margin-top:4px;color:rgba(0,200,83,0.22)">[ Screenshot Lagao ]</div></div>
+    </div>
+    <div style="margin-top:18px;font-size:15px;color:rgba(255,255,255,0.7);font-weight:700;">
+      Daily 2–3 Clips Upload करो और 30 दिनों में Page Monetize करो! 💰
+    </div>
+  </div>
+</div>
+
+<!-- DEMO CLIPS — Proof ke niche -->
+<div class="section" style="text-align:center;" id="demo">
+  <div class="sec-badge">🎬 Demo Clips</div>
+  <h2 class="sec-title">Explore Our <span class="y">Sample Clips 🔥</span></h2>
+  <p class="sec-sub">ऐसे ही हजारों high-quality clips आपको Bundle में मिलेंगे।</p>
+  <div class="demo-grid">
+    <div class="demo-box">
+      <div class="demo-scanlines"></div>
+      <div class="demo-tag">CLIP 1</div>
+      <div class="demo-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+      <div class="demo-name">Bollywood Action</div>
+    </div>
+    <div class="demo-box">
+      <div class="demo-scanlines"></div>
+      <div class="demo-tag">CLIP 2</div>
+      <div class="demo-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+      <div class="demo-name">South Dubbed</div>
+    </div>
+    <div class="demo-box">
+      <div class="demo-scanlines"></div>
+      <div class="demo-tag">CLIP 3</div>
+      <div class="demo-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+      <div class="demo-name">Comedy Scene</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO IS IT FOR -->
+<div class="section" style="text-align:center;">
+  <div class="sec-badge">🎯 किसके लिए है?</div>
+  <h2 class="sec-title">यह Bundle <span class="y">किसके लिए है?</span></h2>
+  <p class="sec-sub">हर वो इंसान जो Social Media से पैसे कमाना चाहता है!</p>
+  <div class="who-grid">
+    <div class="who-card"><span class="who-icon">🎥</span><div class="who-title">Content Creators</div><div class="who-desc">Ideas खत्म हो गए? ये Clips से instantly viral हो सकते हो रोज़!</div></div>
+    <div class="who-card"><span class="who-icon">📘</span><div class="who-title">FB Page Owners</div><div class="who-desc">High Engagement और नए Followers चाहते हो हर रोज़!</div></div>
+    <div class="who-card"><span class="who-icon">▶️</span><div class="who-title">YouTubers</div><div class="who-desc">नए YouTubers जो Channel जल्दी Grow करना चाहते हैं!</div></div>
+    <div class="who-card"><span class="who-icon">⭐</span><div class="who-title">Influencers</div><div class="who-desc">Crazy following build करना चाहते हो Instagram / YouTube पर!</div></div>
+  </div>
+  <h3 style="font-size:16px;font-weight:800;margin:32px 0 14px;color:rgba(255,255,255,0.8)">📤 कहाँ Upload कर सकते हो?</h3>
+  <div class="platform-row">
+    <div class="platform-pill">📘 Facebook</div>
+    <div class="platform-pill">▶️ YouTube</div>
+    <div class="platform-pill">📸 Instagram</div>
+  </div>
+</div>
+
+<!-- BONUSES -->
+<div class="bonuses-wrap" id="bonuses">
+  <div style="max-width:700px;margin:0 auto;text-align:center;">
+    <div class="sec-badge">🎁 Free Bonuses</div>
+    <h2 class="sec-title">आज Order करने पर मिलेंगे <span class="y">₹4,999 के Bonuses!</span></h2>
+    <div class="divider" style="margin:16px auto 28px;"></div>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-icon">📘</div>
+        <div>
+          <div class="bonus-label">Bonus #1 — Free</div>
+          <div class="bonus-name">Facebook Growth Mastery Course</div>
+          <div class="bonus-desc">Explosive Facebook growth के लिए elite tactics — Viral जाओ, Page transform करो।</div>
+          <div class="bonus-value">Value: ₹1,999 — आपको FREE!</div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-icon">📱</div>
+        <div>
+          <div class="bonus-label">Bonus #2 — Free</div>
+          <div class="bonus-name">25,000+ Reels Bundle</div>
+          <div class="bonus-desc">सभी Niches के लिए 25,000+ Reels Bundle बिल्कुल मुफ्त — Instagram Viral!</div>
+          <div class="bonus-value">Value: ₹1,999 — आपको FREE!</div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-icon">▶️</div>
+        <div>
+          <div class="bonus-label">Bonus #3 — Free</div>
+          <div class="bonus-name">YouTube Growth Mastery Course</div>
+          <div class="bonus-desc">Viral video creation, optimization tactics और Influencer collaborations।</div>
+          <div class="bonus-value">Value: ₹999 — आपको FREE!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div style="padding:50px 20px; text-align:center;" id="reviews">
+  <div style="max-width:780px;margin:0 auto;">
+    <div class="sec-badge">⭐ Reviews</div>
+    <h2 class="sec-title">Customer <span class="y">Reviews 🔥</span></h2>
+    <p class="sec-sub">हमारे हज़ारों खुश Customers!</p>
+    <p class="swipe-hint">👈 Swipe karo 👉</p>
+    <div class="reviews-slider">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Bhai kya bundle hai! Maine 2000 clips liye aur 25 din mein mera FB page monetize ho gaya. Ek dum sahi product hai, bilkul recommended!"</div>
+        <div class="review-user">
+          <div class="review-avatar">😊</div>
+          <div><div class="review-name">Rahul Sharma</div><div class="review-loc">Jaipur, Rajasthan ✅ Verified</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Pehle bahut doubt tha lekin try kiya to mast result aaya. 30 din mein Instream Ads ON ho gayi. ₹149 mein itna sab milna unexpected tha bhai!"</div>
+        <div class="review-user">
+          <div class="review-avatar">🙋</div>
+          <div><div class="review-name">Priya Verma</div><div class="review-loc">Lucknow, UP ✅ Verified</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Clips ekdum HD hain aur directly upload ho jaati hain — editing nahi chahiye. WhatsApp pe turant delivery mili. Full paisa vasool deal hai!"</div>
+        <div class="review-user">
+          <div class="review-avatar">👨</div>
+          <div><div class="review-name">Akash Patel</div><div class="review-loc">Surat, Gujarat ✅ Verified</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"YouTube channel 0 se shuru kiya tha. 3 mahine mein 10k subscribers aa gaye sirf iske clips se. Bonuses bhi sach mein kaam ki cheez hain!"</div>
+        <div class="review-user">
+          <div class="review-avatar">🎥</div>
+          <div><div class="review-name">Mohit Yadav</div><div class="review-loc">Patna, Bihar ✅ Verified</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section" id="faq">
+  <div style="text-align:center;margin-bottom:28px;">
+    <div class="sec-badge">❓ FAQ</div>
+    <h2 class="sec-title">अक्सर पूछे जाने वाले <span class="y">सवाल</span></h2>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="faqToggle(this)">Product कब मिलेगा? <span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">Payment के बाद WhatsApp पर तुरंत Bundle भेजा जाएगा। कोई दिक्कत हो तो payment screenshot के साथ हमें WhatsApp करो।</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="faqToggle(this)">Clips Copyright Free हैं? <span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">हाँ! Clips 100% Copyright Free हैं Facebook के लिए। हमारा Facebook Course follow करो — कोई भी issue आए तो नया Bundle मिलेगा।</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="faqToggle(this)">Page Monetize कैसे होगा? <span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">Bundle के साथ मिलने वाले Course में Brand Collaborations और FB Instream Ads की पूरी जानकारी है। Daily 2-3 Clips Upload करो और 30 दिनों में results देखो।</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="faqToggle(this)">कौन सा Bundle लूँ? <span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">अगर शुरुआत कर रहे हो तो ₹99 वाला lो। Serious हो तो ₹149 सबसे Popular है। Maximum clips और bonuses चाहिए तो ₹199 Mega Pack best है।</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="faqToggle(this)">Lifetime Access मिलेगा? <span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">हाँ! WhatsApp Channel और Telegram Channel में add होगे — नए Clips regularly update होते रहेंगे बिल्कुल Free!</div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <div class="fire-badge" style="margin-bottom:18px;">⌛ Limited Time Offer — जल्दी करो!</div>
+  <h2 class="final-title">अभी Order करो और पाओ<br><span class="y">₹5,000 के Bonuses FREE!</span></h2>
+  <p class="final-sub">👇 नीचे अपना Bundle चुनो — WhatsApp पर तुरंत Delivery होगी! 🚀</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:20px;">
+    <a href="https://wa.me/91XXXXXXXXXX?text=1000 Clips ₹99 order karna hai" class="buy-btn" target="_blank" style="font-size:15px;padding:14px 24px;background:rgba(255,255,255,0.1);color:#fff;border:2px solid rgba(255,255,255,0.2);animation:none;">
+      1000 Clips — ₹99
+    </a>
+    <a href="https://wa.me/91XXXXXXXXXX?text=2000 Clips ₹149 order karna hai" class="buy-btn" target="_blank" style="font-size:15px;padding:14px 24px;">
+      🔥 2000 Clips — ₹149
+    </a>
+    <a href="https://wa.me/91XXXXXXXXXX?text=5000 Clips ₹199 order karna hai" class="buy-btn" target="_blank" style="font-size:15px;padding:14px 24px;background:rgba(255,255,255,0.1);color:#fff;border:2px solid rgba(255,255,255,0.2);animation:none;">
+      5000 Clips — ₹199
+    </a>
+  </div>
+  <div class="trust-row">
+    <span class="tbadge">✅ 100% Copyright Free (FB)</span>
+    <span class="tbadge">⚡ No Editing Required</span>
+    <span class="tbadge">🎁 Titles & Hashtags Free</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🎬 CLIP<span>BAZAR</span></div>
+  <div style="font-size:12px;color:rgba(255,255,255,0.28);margin-top:6px;">
+    Support: <a href="https://wa.me/91XXXXXXXXXX" style="color:var(--orange);text-decoration:none;font-weight:700;">WhatsApp करो</a>
+  </div>
+  <div class="footer-disc">
+    This site is not a part of Facebook™ or Facebook™ Inc. This site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc. हम किसी भी earnings या results की guarantee नहीं करते। Results may vary.
+  </div>
+</footer>
+
+<script>
+// FAQ Toggle
+function faqToggle(el) { el.parentElement.classList.toggle('open'); }
+
+// Countdown Timer
+(function() {
+  const key = 'clipbazar_end';
+  let end = parseInt(localStorage.getItem(key) || '0');
+  if (!end || end < Date.now()) {
+    end = Date.now() + 23*3600000 + 59*60000 + 59000;
+    localStorage.setItem(key, end);
+  }
+  function tick() {
+    const d = Math.max(0, end - Date.now());
+    const h = Math.floor(d/3600000), m = Math.floor((d%3600000)/60000), s = Math.floor((d%60000)/1000);
+    document.getElementById('hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('secs').textContent  = String(s).padStart(2,'0');
+    if(d<=0){ end=Date.now()+23*3600000; localStorage.setItem(key,end); }
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+// Animated Counters
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const step = target/(2000/16); let cur=0;
+  const t = setInterval(()=>{
+    cur = Math.min(cur+step,target);
+    el.textContent = Math.floor(cur).toLocaleString('en-IN')+(target>=100?'+':'');
+    if(cur>=target) clearInterval(t);
+  },16);
+}
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ animateCounter(e.target); obs.unobserve(e.target); } });
+},{threshold:0.5});
+document.querySelectorAll('.stat-num[data-target]').forEach(el=>obs.observe(el));
+
+// Pricing Dots
+const slider = document.getElementById('pricingSlider');
+const dots = document.querySelectorAll('#pricingDots span');
+slider.addEventListener('scroll',()=>{
+  const idx = Math.round(slider.scrollLeft/(slider.scrollWidth/3));
+  dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+});
+</script>
+</body>
+</html>
