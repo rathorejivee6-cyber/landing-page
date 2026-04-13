@@ -247,14 +247,18 @@ header {
 }
 .proof-slider::-webkit-scrollbar { display:none; }
 .proof-box {
-  flex:0 0 72vw; max-width:240px; scroll-snap-align:center;
-  background:linear-gradient(135deg,#0a1a0a,#0d1f0d);
-  border:1px solid rgba(0,179,65,0.18); border-radius:14px; aspect-ratio:9/16;
-  display:flex; align-items:center; justify-content:center;
-  flex-direction:column; gap:8px;
-  font-size:12px; color:rgba(0,200,83,0.4); text-align:center; padding:16px;
+  flex:0 0 72vw;
+  max-width:240px;
+  scroll-snap-align:center;
+  background:#000;
+  border:1px solid rgba(0,179,65,0.18);
+  border-radius:16px;
+  aspect-ratio:9/16;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.proof-box .pi { font-size:30px; margin-bottom:6px; }
 
 /* DEMO CLIPS */
 .demo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
@@ -495,7 +499,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
         <div class="plan-clips">1,000 movie<br>Clips</div>
         <div class="plan-clips-sub">Bollywood + South</div>
         <div class="save-pill">SAVE 50%</div>
-        <div class="price-row"><div class="p-sym">₹</div><div class="p-amt">99</div></div>
+        <div class="price-row"><div class="p-sym">₹</div><div class="p-amt">129</div></div>
         <div class="p-was">₹199/-</div>
         <ul class="plan-feats-mini">
           <li>1000+ HD Movie Clips</li>
@@ -511,7 +515,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
       <div class="pricing-card popular">
         <div class="pop-badge">⭐Most POPULAR</div>
         <div class="plan-label">Best Value</div>
-        <div class="plan-clips">2,000 movie<br>Clips</div>
+        <div class="plan-clips">3,000 movie<br>Clips</div>
         <div class="plan-clips-sub">Bollywood + South + 90s</div>
         <div class="save-pill">SAVE 70%</div>
         <div class="price-row"><div class="p-sym">₹</div><div class="p-amt">149</div></div>
@@ -521,7 +525,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
           <li>500+ Pre-Made Titles</li>
           <li>1000+ Viral Hashtags</li>
           <li>FB Viral Course A to Z</li>
-          <li> Instant Delivery</li>
+          <li>Instant Delivery</li>
           <li>Free Replacement ✔</li>
         </ul>
         <a href="https://wa.me/91XXXXXXXXXX?text=2000 Clips ₹149 Bundle order karna hai" class="plan-btn" target="_blank">🔥BUY NOW ₹149</a>
@@ -553,7 +557,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
   </div>
 
   <p style="text-align:center;margin-top:8px;font-size:12px;color:var(--text-dim);padding:0 20px">
-    🔒 Secure Payment • ⚡ WhatsApp Instant Delivery • 🔄 Free Replacement
+    🔒 Secure Payment • ⚡Instant Delivery • 🔄 Free Replacement
   </p>
 </div>
 
@@ -562,20 +566,28 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
   <div class="section" style="text-align:center; padding-top:50px; padding-bottom:50px;">
     <div class="sec-badge">📈 Real Proof</div>
     <h2 class="sec-title">Page <span class="y">Monetization Proof 🔥</span></h2>
-    <p class="sec-sub">हमारे Customers के Real Results — इनकी तरह आप भी earnimg कर सकते हो!</p>
+    <p class="sec-sub">हमारे Customers के Real Results — इनकी तरह आप भी earning कर सकते हो!</p>
     <p class="swipe-hint">👈 Swipe karo 👉</p>
     <div class="proof-slider">
-      <div class="proof-box"><div class="pi">📱</div><div>Monetization Proof</div><div style="font-size:10px;margin-top:4px;color:rgba(0,200,83,0.22)">[ Screenshot Lagao ]</div></div>
-      <div class="proof-box"><div class="pi">💰</div><div>Earnings Proof</div><div style="font-size:10px;margin-top:4px;color:rgba(0,200,83,0.22)">[ Screenshot Lagao ]</div></div>
-      <div class="proof-box"><div class="pi">📊</div><div>Page Growth Proof</div><div style="font-size:10px;margin-top:4px;color:rgba(0,200,83,0.22)">[ Screenshot Lagao ]</div></div>
-      <div class="proof-box"><div class="pi">👥</div><div>Followers Growth</div><div style="font-size:10px;margin-top:4px;color:rgba(0,200,83,0.22)">[ Screenshot Lagao ]</div></div>
+
+      <div class="proof-box">
+        <img src="proof1.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:14px;" alt="Proof 1">
+      </div>
+
+      <div class="proof-box">
+        <img src="proof2.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:14px;" alt="Proof 2">
+      </div>
+
+      <div class="proof-box">
+        <img src="proof3.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:14px;" alt="Proof 3">
+      </div>
+
     </div>
     <div style="margin-top:18px;font-size:15px;color:rgba(255,255,255,0.7);font-weight:700;">
       Daily 2–3 Clips Upload करो और 30 दिनों में Page Monetize करो! 💰
     </div>
   </div>
 </div>
-
 <!-- DEMO CLIPS — Proof ke niche -->
 <div class="section" style="text-align:center;" id="demo">
   <div class="sec-badge">🎬 Demo Clips</div>
