@@ -260,33 +260,6 @@ header {
   justify-content:center;
 }
 
-/* DEMO CLIPS */
-.demo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-.demo-box {
-  background:linear-gradient(160deg,#0d1f0d,#0a150a);
-  border:2px dashed rgba(0,200,83,0.25); border-radius:14px; aspect-ratio:9/16;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap:10px; position:relative; cursor:pointer; overflow:hidden;
-  transition:border-color .2s, transform .2s;
-}
-.demo-box:hover { border-color:rgba(0,200,83,0.6); transform:scale(1.02); }
-.demo-scanlines {
-  position:absolute; inset:0;
-  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,200,83,0.02) 3px,rgba(0,200,83,0.02) 4px);
-}
-.demo-play {
-  width:44px; height:44px; background:rgba(0,200,83,0.15); border:2px solid rgba(0,200,83,0.5);
-  border-radius:50%; display:flex; align-items:center; justify-content:center;
-  position:relative; z-index:1; transition:all .2s;
-}
-.demo-box:hover .demo-play { background:rgba(0,200,83,0.28); transform:scale(1.12); }
-.demo-play svg { width:16px; height:16px; fill:#00c853; margin-left:3px; }
-.demo-tag {
-  position:absolute; top:8px; left:8px; background:#00c853; color:#001a00;
-  font-size:8px; font-weight:900; padding:2px 7px; border-radius:3px; letter-spacing:2px; z-index:2;
-}
-.demo-name { font-size:11px; font-weight:700; color:rgba(0,200,83,0.8); position:relative; z-index:1; text-align:center; padding:0 6px; }
-
 /* WHO */
 .who-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
 .who-card {
@@ -588,32 +561,6 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
     </div>
   </div>
 </div>
-<!-- DEMO CLIPS — Proof ke niche -->
-<div class="section" style="text-align:center;" id="demo">
-  <div class="sec-badge">🎬 Demo Clips</div>
-  <h2 class="sec-title">Explore Our <span class="y">Sample Clips 🔥</span></h2>
-  <p class="sec-sub">ऐसे ही हजारों high-quality clips आपको Bundle में मिलेंगे।</p>
-  <div class="demo-grid">
-    <div class="demo-box">
-      <div class="demo-scanlines"></div>
-      <div class="demo-tag">CLIP 1</div>
-      <div class="demo-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      <div class="demo-name">Bollywood Action</div>
-    </div>
-    <div class="demo-box">
-      <div class="demo-scanlines"></div>
-      <div class="demo-tag">CLIP 2</div>
-      <div class="demo-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      <div class="demo-name">South Dubbed</div>
-    </div>
-    <div class="demo-box">
-      <div class="demo-scanlines"></div>
-      <div class="demo-tag">CLIP 3</div>
-      <div class="demo-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
-      <div class="demo-name">Comedy Scene</div>
-    </div>
-  </div>
-</div>
 
 <!-- WHO IS IT FOR -->
 <div class="section" style="text-align:center;">
@@ -621,10 +568,10 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
   <h2 class="sec-title">यह Bundle <span class="y">किसके लिए है?</span></h2>
   <p class="sec-sub">हर वो इंसान जो Social Media से पैसे कमाना चाहता है!</p>
   <div class="who-grid">
-    <div class="who-card"><span class="who-icon">🎥</span><div class="who-title">Content Creators</div><div class="who-desc">Ideas खत्म हो गए? ये Clips से instantly viral हो सकते हो रोज़!</div></div>
-    <div class="who-card"><span class="who-icon">📘</span><div class="who-title">FB Page Owners</div><div class="who-desc">High Engagement और नए Followers चाहते हो हर रोज़!</div></div>
-    <div class="who-card"><span class="who-icon">▶️</span><div class="who-title">YouTubers</div><div class="who-desc">नए YouTubers जो Channel जल्दी Grow करना चाहते हैं!</div></div>
-    <div class="who-card"><span class="who-icon">⭐</span><div class="who-title">Influencers</div><div class="who-desc">Crazy following build करना चाहते हो Instagram / YouTube पर!</div></div>
+    <div class="who-card"><span class="who-icon">🎥</span><div class="who-title">Content Creators</div><div class="who-desc">Ideas खत्म हो गए? कोई बात नहीं! हमारी Clips से रोज़ Viral Content ready — बिना Editing के</div></div>
+    <div class="who-card"><span class="who-icon">📘</span><div class="who-title">FB Page Owners</div><div class="who-desc">Daily 2 Clips Upload करो — Followers बढ़ेंगे और 30 दिन में Monetization ON होगी!</div></div>
+    <div class="who-card"><span class="who-icon">▶️</span><div class="who-title">YouTubers</div><div class="who-desc">Channel Zero से शुरू करो! Direct Upload करो — No Editing, Full Results!</div></div>
+    <div class="who-card"><span class="who-icon">⭐</span><div class="who-title">Influencers</div><div class="who-desc">Trending Clips डालो Instagram & YouTube पर — Followers खुद आएंगे</div></div>
   </div>
   <h3 style="font-size:16px;font-weight:800;margin:32px 0 14px;color:rgba(255,255,255,0.8)">📤 कहाँ Upload कर सकते हो?</h3>
   <div class="platform-row">
@@ -723,12 +670,12 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
     <h2 class="sec-title">अक्सर पूछे जाने वाले <span class="y">सवाल</span></h2>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="faqToggle(this)">Product कब मिलेगा? <span class="faq-arrow">﹢</span></div>
-    <div class="faq-a">Payment के बाद WhatsApp पर तुरंत Bundle भेजा जाएगा। कोई दिक्कत हो तो payment screenshot के साथ हमें WhatsApp करो।</div>
+    <div class="faq-q" onclick="faqToggle(this)"> Clips Copyright Free hain?<span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">Haan! 100% Facebook ke liye Copyright Free hain. Course follow karo — koi issue nahi aayega</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="faqToggle(this)">Clips Copyright Free हैं? <span class="faq-arrow">﹢</span></div>
-    <div class="faq-a">हाँ! Clips 100% Copyright Free हैं Facebook के लिए। हमारा Facebook Course follow करो — कोई भी issue आए तो नया Bundle मिलेगा।</div>
+    <div class="faq-q" onclick="faqToggle(this)"> Naya Page hai — results milenge?<span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">Bilkul! Daily 2-3 Clips upload karo — 30 din mein Monetization ON!</div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="faqToggle(this)">Page Monetize कैसे होगा? <span class="faq-arrow">﹢</span></div>
@@ -748,7 +695,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
 <div class="final-cta">
   <div class="fire-badge" style="margin-bottom:18px;">⌛ Limited Time Offer — जल्दी करो!</div>
   <h2 class="final-title">अभी Order करो और पाओ<br><span class="y">₹5,000 के Bonuses FREE!</span></h2>
-  <p class="final-sub">👇 नीचे अपना Bundle चुनो — WhatsApp पर तुरंत Delivery होगी! 🚀</p>
+  <p class="final-sub">👇 नीचे अपना Bundle चुनो — Get instand access 🚀</p>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:20px;">
     <a href="https://wa.me/91XXXXXXXXXX?text=1000 Clips ₹99 order karna hai" class="buy-btn" target="_blank" style="font-size:15px;padding:14px 24px;background:rgba(255,255,255,0.1);color:#fff;border:2px solid rgba(255,255,255,0.2);animation:none;">
       1000 Clips — ₹99
@@ -769,9 +716,8 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">🎬 CLIP<span>BAZAR</span></div>
+  <div class="footer-logo">🎬 Nexgen<span>Assets</span></div>
   <div style="font-size:12px;color:rgba(255,255,255,0.28);margin-top:6px;">
-    Support: <a href="https://wa.me/91XXXXXXXXXX" style="color:var(--orange);text-decoration:none;font-weight:700;">WhatsApp करो</a>
   </div>
   <div class="footer-disc">
     This site is not a part of Facebook™ or Facebook™ Inc. This site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc. हम किसी भी earnings या results की guarantee नहीं करते। Results may vary.
@@ -824,5 +770,35 @@ slider.addEventListener('scroll',()=>{
   dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
 });
 </script>
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/916376413874?text=Movie Clips Bundle order karna hai" 
+   target="_blank"
+   style="
+    position:fixed;
+    bottom:24px;
+    right:20px;
+    z-index:9999;
+    background:#25d366;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 20px rgba(37,211,102,0.5);
+    animation:waBounce 2s ease-in-out infinite;
+   ">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.17 1.535 5.943L.057 23.571a.75.75 0 00.922.922l5.688-1.478A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.848 0-3.596-.49-5.112-1.349l-.39-.22-3.814.991.999-3.76-.242-.4A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<style>
+@keyframes waBounce {
+  0%,100% { transform:scale(1); box-shadow:0 4px 20px rgba(37,211,102,0.5); }
+  50% { transform:scale(1.1); box-shadow:0 4px 30px rgba(37,211,102,0.8); }
+}
+</style>
 </body>
 </html>
