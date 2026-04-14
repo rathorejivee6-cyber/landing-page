@@ -1,237 +1,137 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+  <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '611962561445676');
+fbq('track', 'PageView');
+fbq('track', 'Purchase', {value: 149.00, currency: 'INR'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=611962561445676&ev=PageView&noscript=1"
+/></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thank You – ClipBazar</title>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Thank You</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  background:#0a0a12;
-  color:#fff;
-  font-family:'Noto Sans Devanagari',sans-serif;
-  min-height:100vh;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f5f7fb;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding:30px 20px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
+  height:100vh;
+  color:#111;
 }
 
-/* BG GLOW */
-body::before {
-  content:'';
-  position:fixed; inset:0;
-  background:radial-gradient(ellipse 80% 60% at 50% 40%, rgba(37,211,102,0.08) 0%, transparent 70%);
-  pointer-events:none;
-}
-
-/* CONFETTI DOTS */
-body::after {
-  content:'';
-  position:fixed; inset:0;
-  background-image:
-    radial-gradient(circle, rgba(255,107,0,0.15) 1px, transparent 1px),
-    radial-gradient(circle, rgba(255,208,0,0.1) 1px, transparent 1px);
-  background-size: 40px 40px, 70px 70px;
-  background-position: 0 0, 20px 20px;
-  pointer-events:none;
-}
-
-.card {
-  background:linear-gradient(135deg,#13131f,#1a1a2e);
-  border:2px solid rgba(37,211,102,0.3);
-  border-radius:24px;
-  padding:40px 28px;
-  max-width:420px;
+/* CARD */
+.card{
+  background:#fff;
+  padding:35px 28px;
+  border-radius:14px;
+  max-width:380px;
   width:100%;
-  position:relative;
-  box-shadow:0 0 60px rgba(37,211,102,0.1), 0 0 120px rgba(255,107,0,0.05);
-  animation:cardIn 0.6s ease-out;
-}
-@keyframes cardIn {
-  from { opacity:0; transform:translateY(30px); }
-  to   { opacity:1; transform:translateY(0); }
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* TICK ICON */
-.tick-wrap {
-  width:80px; height:80px;
-  background:linear-gradient(135deg,#00c853,#00e676);
+/* ICON */
+.icon{
+  width:60px;height:60px;
+  margin:0 auto 18px;
+  background:#22c55e;
+  color:#fff;
   border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  margin:0 auto 24px;
-  box-shadow:0 0 30px rgba(0,200,83,0.4);
-  animation:tickPulse 2s ease-in-out infinite;
-}
-@keyframes tickPulse {
-  0%,100% { box-shadow:0 0 30px rgba(0,200,83,0.4); }
-  50%      { box-shadow:0 0 50px rgba(0,200,83,0.7); }
-}
-.tick-wrap svg { width:40px; height:40px; }
-
-.thank-title {
-  font-family:'Baloo 2',sans-serif;
-  font-size:28px; font-weight:900;
-  margin-bottom:10px; line-height:1.25;
-}
-.thank-title .y { color:#ffd000; }
-.thank-title .g { color:#00c853; }
-
-.thank-sub {
-  font-size:15px;
-  color:rgba(255,255,255,0.65);
-  line-height:1.65; margin-bottom:28px;
-}
-.thank-sub b { color:#ffd000; }
-
-/* DIVIDER */
-.divider {
-  width:40px; height:2px;
-  background:rgba(255,255,255,0.1);
-  border-radius:2px; margin:0 auto 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
 }
 
-/* STEPS */
-.steps { display:flex; flex-direction:column; gap:12px; margin-bottom:28px; text-align:left; }
-.step {
-  display:flex; align-items:center; gap:14px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.07);
-  border-radius:12px; padding:14px 16px;
+/* TITLE */
+.title{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:8px;
 }
-.step-num {
-  width:32px; height:32px; flex-shrink:0;
-  background:linear-gradient(135deg,#ff6b00,#ffd000);
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-family:'Baloo 2',sans-serif; font-size:14px; font-weight:900; color:#000;
-}
-.step-text { font-size:13px; color:rgba(255,255,255,0.8); line-height:1.5; }
-.step-text b { color:#fff; }
 
-/* WA BUTTON */
-.wa-btn {
-  display:flex; align-items:center; justify-content:center; gap:10px;
-  background:linear-gradient(135deg,#25d366,#128c7e);
-  color:#fff; text-decoration:none;
-  font-family:'Baloo 2',sans-serif;
-  font-size:18px; font-weight:900;
-  padding:16px 28px; border-radius:50px;
-  margin-bottom:14px;
-  box-shadow:0 0 30px rgba(37,211,102,0.4);
-  animation:waBtnGlow 2s ease-in-out infinite;
-  transition:transform .2s;
+/* TEXT */
+.sub{
+  font-size:14px;
+  color:#555;
+  margin-bottom:22px;
+  line-height:1.5;
 }
-.wa-btn:hover { transform:translateY(-3px) scale(1.02); }
-@keyframes waBtnGlow {
-  0%,100% { box-shadow:0 0 30px rgba(37,211,102,0.4); }
-  50%      { box-shadow:0 0 55px rgba(37,211,102,0.7); }
-}
-.wa-btn svg { width:26px; height:26px; flex-shrink:0; }
 
-.skip-text {
-  font-size:11px; color:rgba(255,255,255,0.25);
-  margin-top:8px;
+/* BUTTON */
+.btn{
+  display:block;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  padding:14px;
+  border-radius:8px;
+  font-weight:600;
+  transition:.2s;
 }
-.skip-text a { color:rgba(255,255,255,0.35); text-decoration:underline; }
 
-/* AUTO REDIRECT BAR */
-.redirect-bar {
-  margin-top:20px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:50px; padding:8px 18px;
-  font-size:12px; color:rgba(255,255,255,0.35);
+.btn:hover{
+  background:#333;
 }
-.redirect-bar span { color:#ffd000; font-weight:700; }
 
-/* LOGO */
-.logo {
-  font-family:'Baloo 2',sans-serif;
-  font-size:16px; font-weight:900;
-  color:rgba(255,208,0,0.5);
-  margin-top:24px;
+/* COUNTDOWN */
+.count{
+  margin-top:12px;
+  font-size:12px;
+  color:#777;
 }
-.logo b { color:rgba(255,107,0,0.5); }
 </style>
 </head>
+
 <body>
 
 <div class="card">
 
-  <!-- TICK -->
-  <div class="tick-wrap">
-    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="20 6 9 17 4 12"/>
-    </svg>
+  <div class="icon">✔</div>
+
+  <div class="title">Order Confirm हो गया</div>
+
+  <div class="sub">
+    आपका Bundle WhatsApp पर मिलेगा।<br>
+    नीचे क्लिक करके Channel Join करें।
   </div>
 
-  <h1 class="thank-title">
-    🎉 Order <span class="g">Confirm</span> हो गया <span class="y">बॉस!</span>
-  </h1>
-  <p class="thank-sub">
-    तुम्हारा Bundle जल्द ही <b>WhatsApp पर Deliver</b> होगा।<br>
-    अभी हमारा Channel Join करो और updates पाओ!
-  </p>
-
-  <div class="divider"></div>
-
-  <!-- STEPS -->
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-text"><b>WhatsApp Channel Join करो</b><br>नीचे button दबाओ और Join करो</div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-text"><b>Bundle का Link मिलेगा</b><br>Channel पर Google Drive link pinned है</div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-text"><b>Daily Upload शुरू करो</b><br>2-3 Clips रोज़ डालो और 30 दिन में Monetize!</div>
-    </div>
-  </div>
-
-  <!-- WA BUTTON -->
-  <a href="https://whatsapp.com/channel/0029Vb81hNq4Spk9A6nqCl1a" target="_blank" class="wa-btn">
-    <svg viewBox="0 0 24 24" fill="white">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.17 1.535 5.943L.057 23.571a.75.75 0 00.922.922l5.688-1.478A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.848 0-3.596-.49-5.112-1.349l-.39-.22-3.814.991.999-3.76-.242-.4A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-    </svg>
-    👉 Channel Join करो — FREE!
+  <a href="https://whatsapp.com/channel/0029Vb81hNq4Spk9A6nqCl1a" class="btn">
+    Join WhatsApp Channel
   </a>
 
-  <div class="skip-text">
-    Bundle पहले से लिया है? <a href="https://whatsapp.com/channel/0029Vb81hNq4Spk9A6nqCl1a">Direct Channel पर जाओ</a>
-  </div>
-
-  <!-- AUTO REDIRECT -->
-  <div class="redirect-bar">
-    ⏱️ <span id="countdown">10</span> seconds mein auto redirect hoga
+  <div class="count">
+    ⏱️ <span id="t">10</span> sec में redirect
   </div>
 
 </div>
 
-<div class="logo">🎬 Nex Gen <b>Assets</b></div>
-
 <script>
-// Auto redirect countdown
-let sec = 10;
-const el = document.getElementById('countdown');
-const timer = setInterval(() => {
-  sec--;
-  el.textContent = sec;
-  if (sec <= 0) {
-    clearInterval(timer);
-    window.location.href = 'https://whatsapp.com/channel/0029Vb81hNq4Spk9A6nqCl1a';
+let t=10;
+setInterval(()=>{
+  t--;
+  document.getElementById("t").innerText=t;
+  if(t<=0){
+    window.location.href="https://whatsapp.com/channel/0029Vb81hNq4Spk9A6nqCl1a";
   }
-}, 1000);
+},1000);
 </script>
 
 </body>
