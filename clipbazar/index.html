@@ -16,7 +16,7 @@
   --card2: #1a1a2e;
   --white: #ffffff;
   --text-dim: rgba(255,255,255,0.55);
-  --border: rgba(255,255,255,0.08);=
+  --border: rgba(255,255,255,0.08);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -51,20 +51,19 @@ header {
   border:1px solid rgba(255,107,0,0.2);
   border-radius:20px; transition:.2s; letter-spacing:.3px;
 }
-.nav-links a.cta-nav { background:linear-gradient(135deg,#ff6b00,#ffd000); color:#000; border-color:transparent; padding:8px 18px;   /* size badhaao */
-  font-size:12px;     /* text bada karo */
-}
+.nav-links a.cta-nav { background:linear-gradient(135deg,#ff6b00,#ffd000); color:#000; border-color:transparent; padding:8px 18px; font-size:12px; }
 .nav-links a:hover:not(.cta-nav) { border-color:rgba(255,107,0,0.5); color:#fff; }
 
-/* HERO */
+/* HERO — overflow:hidden HATA DIYA */
 .hero {
   background:linear-gradient(170deg,#0a0a12 0%,#140830 55%,#0a0a12 100%);
   padding:44px 20px 36px;
-  text-align:center; position:relative; overflow:hidden;
+  text-align:center; position:relative;
 }
 .hero::before {
   content:''; position:absolute; inset:0;
   background:radial-gradient(ellipse 80% 70% at 50% 30%, rgba(255,107,0,0.1) 0%, transparent 70%);
+  pointer-events:none;
 }
 .fire-badge {
   display:inline-flex; align-items:center; gap:6px;
@@ -98,9 +97,6 @@ header {
   display:flex; flex-direction:column; align-items:center; gap:10px;
   box-shadow:0 0 40px rgba(0,200,83,0.12), 0 0 80px rgba(255,107,0,0.06);
 }
-.product-glow .label { font-size:10px; letter-spacing:3px; color:rgba(0,200,83,0.5); font-weight:700; }
-.product-glow .icon { font-size:56px; line-height:1; }
-.product-glow .note { font-size:11px; color:rgba(0,200,83,0.35); }
 .product-badge {
   position:absolute; top:-10px; right:-10px;
   background:linear-gradient(135deg,#e01a1a,#ff6b00);
@@ -178,7 +174,7 @@ header {
 .sec-sub { font-size:14px; color:var(--text-dim); margin-bottom:28px; line-height:1.6; }
 .swipe-hint { font-size:11px; color:rgba(255,255,255,0.25); margin-bottom:12px; letter-spacing:1px; }
 
-/* ===== PRICING SLIDER ===== */
+/* PRICING */
 .pricing-section { padding:52px 0; text-align:center; background:linear-gradient(180deg,#0a0a12,#100a20,#0a0a12); }
 .pricing-section .top-text { padding:0 20px; }
 .pricing-slider-wrap { position:relative; padding:20px 0 8px; }
@@ -238,7 +234,7 @@ header {
 .slider-dots span { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.18); transition:.3s; }
 .slider-dots span.active { background:var(--orange); width:20px; border-radius:4px; }
 
-/* PROOF SLIDER */
+/* PROOF */
 .proof-wrap { background:rgba(255,255,255,0.02); }
 .proof-slider {
   display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
@@ -247,17 +243,10 @@ header {
 }
 .proof-slider::-webkit-scrollbar { display:none; }
 .proof-box {
-  flex:0 0 72vw;
-  max-width:240px;
-  scroll-snap-align:center;
-  background:#000;
-  border:1px solid rgba(0,179,65,0.18);
-  border-radius:16px;
-  aspect-ratio:9/16;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  flex:0 0 72vw; max-width:240px; scroll-snap-align:center;
+  background:#000; border:1px solid rgba(0,179,65,0.18);
+  border-radius:16px; aspect-ratio:9/16; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
 }
 
 /* WHO */
@@ -363,13 +352,17 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
 .footer-logo span { color:var(--orange); }
 .footer-disc { font-size:10px; color:rgba(255,255,255,0.18); max-width:560px; margin:10px auto 0; line-height:1.7; }
 
-/* RESPONSIVE */
 @media(max-width:500px) {
   .bonus-card { flex-direction:column; text-align:center; }
   .nav-links a:not(.cta-nav) { display:none; }
   .timer { gap:5px; }
   .time-box { min-width:56px; padding:9px 10px; }
   .time-num { font-size:28px; }
+}
+
+@keyframes waBounce {
+  0%,100% { transform:scale(1); box-shadow:0 4px 20px rgba(37,211,102,0.5); }
+  50% { transform:scale(1.1); box-shadow:0 4px 30px rgba(37,211,102,0.8); }
 }
 </style>
 </head>
@@ -402,10 +395,9 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
 
   <div class="product-mockup">
     <div class="product-badge">🔥 BEST SELLER</div>
-<div class="product-glow" style="padding:0;overflow:hidden;">
-  <img src="product.jpg" alt="Movie Clips Bundle"
-       style="width:100%;border-radius:16px;display:block;">
-</div>
+    <div class="product-glow" style="padding:0;overflow:hidden;">
+      <img src="product.jpg" alt="Movie Clips Bundle" style="width:100%;border-radius:16px;display:block;">
+    </div>
   </div>
 
   <div class="stats-row">
@@ -428,10 +420,10 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
     </ul>
   </div>
 
+  <!-- HERO BUY BUTTON — FIXED ✅ -->
   <div style="text-align:center; margin-bottom:16px;">
-  <a href="#pricing" class="buy-btn">
-  👉 अभी खरीदो — Plan Chuno!
-</a>  
+    <a class="buy-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});return false;" href="#pricing">
+      👉 अभी खरीदो – Plan Chuno!
     </a>
     <div class="price-strike">मूल कीमत ₹499/- — आज सिर्फ ₹149/-</div>
   </div>
@@ -455,7 +447,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
   </div>
 </section>
 
-<!-- ===== PRICING SLIDER — Hero ke theek baad ===== -->
+<!-- PRICING -->
 <div class="pricing-section" id="pricing">
   <div class="top-text">
     <div class="sec-badge" style="margin-bottom:12px">💰 Pricing</div>
@@ -463,27 +455,27 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
     <p class="sec-sub" style="text-align:center;margin-bottom:4px">⌛ Limited Time — जल्दी करो, Price बढ़ने वाला है!</p>
     <p class="swipe-hint" style="margin-bottom:0">👈 Swipe karke plan chuno 👉</p>
   </div>
-
   <div class="pricing-slider-wrap">
     <div class="pricing-slider" id="pricingSlider">
 
-<!-- PLAN 1 — ₹129 -->
-<div class="pricing-card">
-  <div class="plan-label">Starter Pack</div>
-  <div class="plan-clips">1,000 movie<br>Clips</div>
-  <div class="plan-clips-sub">Bollywood + South</div>
-  <div class="save-pill">SAVE 50%</div>
-  <div class="price-row"><div class="p-sym">₹</div><div class="p-amt">129</div></div>
-  <div class="p-was">₹199/-</div>
-  <ul class="plan-feats-mini">
-    <li>1000+ HD Movie Clips</li>
-    <li>200+ Pre-Made Titles</li>
-    <li>Viral Hashtags 2026</li>
-    <li>Instant Delivery</li>
-    <li>Copyright Free (FB)</li>
-  </ul>
-  <a href="https://rzp.io/rzp/fMipaV1N" class="plan-btn" target="_blank">👉 ₹129 में खरीदो</a>
-</div>
+      <!-- PLAN 1 — ₹129 -->
+      <div class="pricing-card">
+        <div class="plan-label">Starter Pack</div>
+        <div class="plan-clips">1,000 movie<br>Clips</div>
+        <div class="plan-clips-sub">Bollywood + South</div>
+        <div class="save-pill">SAVE 50%</div>
+        <div class="price-row"><div class="p-sym">₹</div><div class="p-amt">129</div></div>
+        <div class="p-was">₹199/-</div>
+        <ul class="plan-feats-mini">
+          <li>1000+ HD Movie Clips</li>
+          <li>200+ Pre-Made Titles</li>
+          <li>Viral Hashtags 2026</li>
+          <li>Instant Delivery</li>
+          <li>Copyright Free (FB)</li>
+        </ul>
+        <a href="https://rzp.io/rzp/fMipaV1N" class="plan-btn" target="_blank">👉 ₹129 में खरीदो</a>
+      </div>
+
       <!-- PLAN 2 — ₹149 (POPULAR) -->
       <div class="pricing-card popular">
         <div class="pop-badge">⭐Most POPULAR</div>
@@ -528,13 +520,12 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
       <span class="active"></span><span></span><span></span>
     </div>
   </div>
-
   <p style="text-align:center;margin-top:8px;font-size:12px;color:var(--text-dim);padding:0 20px">
     🔒 Secure Payment • ⚡Instant Delivery • 🔄 Free Replacement
   </p>
 </div>
 
-<!-- PROOF SECTION -->
+<!-- PROOF -->
 <div class="proof-wrap" id="proof">
   <div class="section" style="text-align:center; padding-top:50px; padding-bottom:50px;">
     <div class="sec-badge">📈 Real Proof</div>
@@ -542,19 +533,9 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
     <p class="sec-sub">हमारे Customers के Real Results — इनकी तरह आप भी earning कर सकते हो!</p>
     <p class="swipe-hint">👈 Swipe karo 👉</p>
     <div class="proof-slider">
-
-      <div class="proof-box">
-        <img src="proof1.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:14px;" alt="Proof 1">
-      </div>
-
-      <div class="proof-box">
-        <img src="proof2.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:14px;" alt="Proof 2">
-      </div>
-
-      <div class="proof-box">
-        <img src="proof3.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:14px;" alt="Proof 3">
-      </div>
-
+      <div class="proof-box"><img src="proof1.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:14px;" alt="Proof 1"></div>
+      <div class="proof-box"><img src="proof2.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:14px;" alt="Proof 2"></div>
+      <div class="proof-box"><img src="proof3.jpg" style="width:100%;height:100%;object-fit:contain;background:#000;border-radius:14px;" alt="Proof 3"></div>
     </div>
     <div style="margin-top:18px;font-size:15px;color:rgba(255,255,255,0.7);font-weight:700;">
       Daily 2–3 Clips Upload करो और 30 दिनों में Page Monetize करो! 💰
@@ -562,16 +543,16 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
   </div>
 </div>
 
-<!-- WHO IS IT FOR -->
+<!-- WHO -->
 <div class="section" style="text-align:center;">
   <div class="sec-badge">🎯 किसके लिए है?</div>
   <h2 class="sec-title">यह Bundle <span class="y">किसके लिए है?</span></h2>
   <p class="sec-sub">हर वो इंसान जो Social Media से पैसे कमाना चाहता है!</p>
   <div class="who-grid">
-    <div class="who-card"><span class="who-icon">🎥</span><div class="who-title">Content Creators</div><div class="who-desc">Ideas खत्म हो गए? कोई बात नहीं! हमारी Clips से रोज़ Viral Content ready — बिना Editing के</div></div>
-    <div class="who-card"><span class="who-icon">📘</span><div class="who-title">FB Page Owners</div><div class="who-desc">Daily 2 Clips Upload करो — Followers बढ़ेंगे और 30 दिन में Monetization ON होगी!</div></div>
-    <div class="who-card"><span class="who-icon">▶️</span><div class="who-title">YouTubers</div><div class="who-desc">Channel Zero से शुरू करो! Direct Upload करो — No Editing, Full Results!</div></div>
-    <div class="who-card"><span class="who-icon">⭐</span><div class="who-title">Influencers</div><div class="who-desc">Trending Clips डालो Instagram & YouTube पर — Followers खुद आएंगे</div></div>
+    <div class="who-card"><span class="who-icon">🎥</span><div class="who-title">Content Creators</div><div class="who-desc">Ideas खत्म हो गए? हमारी Clips से रोज़ Viral Content ready — बिना Editing के</div></div>
+    <div class="who-card"><span class="who-icon">📘</span><div class="who-title">FB Page Owners</div><div class="who-desc">Daily 2 Clips Upload करो — 30 दिन में Monetization ON!</div></div>
+    <div class="who-card"><span class="who-icon">▶️</span><div class="who-title">YouTubers</div><div class="who-desc">Channel Zero से शुरू करो! No Editing, Full Results!</div></div>
+    <div class="who-card"><span class="who-icon">⭐</span><div class="who-title">Influencers</div><div class="who-desc">Trending Clips डालो — Followers खुद आएंगे</div></div>
   </div>
   <h3 style="font-size:16px;font-weight:800;margin:32px 0 14px;color:rgba(255,255,255,0.8)">📤 कहाँ Upload कर सकते हो?</h3>
   <div class="platform-row">
@@ -593,7 +574,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
         <div>
           <div class="bonus-label">Bonus #1 — Free</div>
           <div class="bonus-name">Facebook Growth Mastery Course</div>
-          <div class="bonus-desc">Explosive Facebook growth के लिए elite tactics — Viral जाओ, Page transform करो।</div>
+          <div class="bonus-desc">Explosive Facebook growth के लिए elite tactics।</div>
           <div class="bonus-value">Value: ₹1,999 — आपको FREE!</div>
         </div>
       </div>
@@ -602,7 +583,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
         <div>
           <div class="bonus-label">Bonus #2 — Free</div>
           <div class="bonus-name">25,000+ Reels Bundle</div>
-          <div class="bonus-desc">सभी Niches के लिए 25,000+ Reels Bundle बिल्कुल मुफ्त — Instagram Viral!</div>
+          <div class="bonus-desc">सभी Niches के लिए 25,000+ Reels Bundle बिल्कुल मुफ्त!</div>
           <div class="bonus-value">Value: ₹1,999 — आपको FREE!</div>
         </div>
       </div>
@@ -611,7 +592,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
         <div>
           <div class="bonus-label">Bonus #3 — Free</div>
           <div class="bonus-name">YouTube Growth Mastery Course</div>
-          <div class="bonus-desc">Viral video creation, optimization tactics और Influencer collaborations।</div>
+          <div class="bonus-desc">Viral video creation और optimization tactics।</div>
           <div class="bonus-value">Value: ₹999 — आपको FREE!</div>
         </div>
       </div>
@@ -629,7 +610,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
     <div class="reviews-slider">
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Bhai kya bundle hai! Maine 2000 clips liye aur 25 din mein mera FB page monetize ho gaya. Ek dum sahi product hai, bilkul recommended!"</div>
+        <div class="review-text">"Bhai kya bundle hai! Maine 2000 clips liye aur 25 din mein mera FB page monetize ho gaya!"</div>
         <div class="review-user">
           <div class="review-avatar">😊</div>
           <div><div class="review-name">Rahul Sharma</div><div class="review-loc">Jaipur, Rajasthan ✅ Verified</div></div>
@@ -637,7 +618,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
       </div>
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Pehle bahut doubt tha lekin try kiya to mast result aaya. 30 din mein Instream Ads ON ho gayi. ₹149 mein itna sab milna unexpected tha bhai!"</div>
+        <div class="review-text">"30 din mein Instream Ads ON ho gayi. ₹149 mein itna sab milna unexpected tha bhai!"</div>
         <div class="review-user">
           <div class="review-avatar">🙋</div>
           <div><div class="review-name">Priya Verma</div><div class="review-loc">Lucknow, UP ✅ Verified</div></div>
@@ -645,7 +626,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
       </div>
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Clips ekdum HD hain aur directly upload ho jaati hain — editing nahi chahiye. WhatsApp pe turant delivery mili. Full paisa vasool deal hai!"</div>
+        <div class="review-text">"Clips ekdum HD hain aur directly upload ho jaati hain. Full paisa vasool deal hai!"</div>
         <div class="review-user">
           <div class="review-avatar">👨</div>
           <div><div class="review-name">Akash Patel</div><div class="review-loc">Surat, Gujarat ✅ Verified</div></div>
@@ -653,7 +634,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
       </div>
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <div class="review-text">"YouTube channel 0 se shuru kiya tha. 3 mahine mein 10k subscribers aa gaye sirf iske clips se. Bonuses bhi sach mein kaam ki cheez hain!"</div>
+        <div class="review-text">"3 mahine mein 10k subscribers aa gaye sirf iske clips se. Bonuses bhi kaam ki cheez hain!"</div>
         <div class="review-user">
           <div class="review-avatar">🎥</div>
           <div><div class="review-name">Mohit Yadav</div><div class="review-loc">Patna, Bihar ✅ Verified</div></div>
@@ -670,24 +651,24 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
     <h2 class="sec-title">अक्सर पूछे जाने वाले <span class="y">सवाल</span></h2>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="faqToggle(this)"> Clips Copyright Free hain?<span class="faq-arrow">﹢</span></div>
-    <div class="faq-a">Haan! 100% Facebook ke liye Copyright Free hain. Course follow karo — koi issue nahi aayega</div>
+    <div class="faq-q" onclick="faqToggle(this)">Clips Copyright Free hain?<span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">Haan! 100% Facebook ke liye Copyright Free hain.</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="faqToggle(this)"> Naya Page hai — results milenge?<span class="faq-arrow">﹢</span></div>
+    <div class="faq-q" onclick="faqToggle(this)">Naya Page hai — results milenge?<span class="faq-arrow">﹢</span></div>
     <div class="faq-a">Bilkul! Daily 2-3 Clips upload karo — 30 din mein Monetization ON!</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="faqToggle(this)">Page Monetize कैसे होगा? <span class="faq-arrow">﹢</span></div>
-    <div class="faq-a">Bundle के साथ मिलने वाले Course में Brand Collaborations और FB Instream Ads की पूरी जानकारी है। Daily 2-3 Clips Upload करो और 30 दिनों में results देखो।</div>
+    <div class="faq-q" onclick="faqToggle(this)">Page Monetize कैसे होगा?<span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">Bundle के साथ Course में पूरी जानकारी है। Daily 2-3 Clips Upload करो।</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="faqToggle(this)">कौन सा Bundle लूँ? <span class="faq-arrow">﹢</span></div>
-    <div class="faq-a">अगर शुरुआत कर रहे हो तो ₹99 वाला lो। Serious हो तो ₹149 सबसे Popular है। Maximum clips और bonuses चाहिए तो ₹199 Mega Pack best है।</div>
+    <div class="faq-q" onclick="faqToggle(this)">कौन सा Bundle लूँ?<span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">Serious हो तो ₹149 सबसे Popular है। Maximum चाहिए तो ₹199 Mega Pack best है।</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="faqToggle(this)">Lifetime Access मिलेगा? <span class="faq-arrow">﹢</span></div>
-    <div class="faq-a">हाँ! WhatsApp Channel और Telegram Channel में add होगे — नए Clips regularly update होते रहेंगे बिल्कुल Free!</div>
+    <div class="faq-q" onclick="faqToggle(this)">Lifetime Access मिलेगा?<span class="faq-arrow">﹢</span></div>
+    <div class="faq-a">हाँ! WhatsApp & Telegram Channel में add होगे — नए Clips Free update होते रहेंगे!</div>
   </div>
 </div>
 
@@ -695,7 +676,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
 <div class="final-cta">
   <div class="fire-badge" style="margin-bottom:18px;">⌛ Limited Time Offer — जल्दी करो!</div>
   <h2 class="final-title">अभी Order करो और पाओ<br><span class="y">₹5,000 के Bonuses FREE!</span></h2>
-  <p class="final-sub">👇 नीचे अपना Bundle चुनो — Get instand access 🚀</p>
+  <p class="final-sub">👇 नीचे अपना Bundle चुनो — Get instant access 🚀</p>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:20px;">
     <a href="https://rzp.io/rzp/fMipaV1N" class="buy-btn" target="_blank" style="font-size:15px;padding:14px 24px;background:rgba(255,255,255,0.1);color:#fff;border:2px solid rgba(255,255,255,0.2);animation:none;">
       1000 Clips — ₹129
@@ -717,12 +698,18 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">🎬 Nexgen<span>Assets</span></div>
-  <div style="font-size:12px;color:rgba(255,255,255,0.28);margin-top:6px;">
-  </div>
   <div class="footer-disc">
-    This site is not a part of Facebook™ or Facebook™ Inc. This site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc. हम किसी भी earnings या results की guarantee नहीं करते। Results may vary.
+    This site is not a part of Facebook™ or Facebook™ Inc. FACEBOOK™ is a trademark of FACEBOOK™, Inc. हम किसी भी earnings या results की guarantee नहीं करते। Results may vary.
   </div>
 </footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/916376413874?" target="_blank" style="position:fixed;bottom:24px;right:20px;z-index:9999;background:#25d366;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);animation:waBounce 2s ease-in-out infinite;">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.17 1.535 5.943L.057 23.571a.75.75 0 00.922.922l5.688-1.478A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.848 0-3.596-.49-5.112-1.349l-.39-.22-3.814.991.999-3.76-.242-.4A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
 
 <script>
 // FAQ Toggle
@@ -770,35 +757,5 @@ slider.addEventListener('scroll',()=>{
   dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
 });
 </script>
-<!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/916376413874?" 
-   target="_blank"
-   style="
-    position:fixed;
-    bottom:24px;
-    right:20px;
-    z-index:9999;
-    background:#25d366;
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 4px 20px rgba(37,211,102,0.5);
-    animation:waBounce 2s ease-in-out infinite;
-   ">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.17 1.535 5.943L.057 23.571a.75.75 0 00.922.922l5.688-1.478A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.848 0-3.596-.49-5.112-1.349l-.39-.22-3.814.991.999-3.76-.242-.4A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-  </svg>
-</a>
-
-<style>
-@keyframes waBounce {
-  0%,100% { transform:scale(1); box-shadow:0 4px 20px rgba(37,211,102,0.5); }
-  50% { transform:scale(1.1); box-shadow:0 4px 30px rgba(37,211,102,0.8); }
-}
-</style>
 </body>
 </html>
