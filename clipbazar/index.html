@@ -490,7 +490,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
           <li>Instant Delivery</li>
           <li>Copyright Free (FB)</li>
         </ul>
-<a href="#" onclick="payDirectly(this, '129.00'); return false;" class="plan-btn">👉 ₹129 में खरीदो</a>
+        <a href="https://rzp.io/rzp/fMipaV1N" class="plan-btn" target="_blank">👉 ₹129 में खरीदो</a>
       </div>
 
       <!-- PLAN 2 — ₹149 (POPULAR) -->
@@ -510,8 +510,8 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
           <li>Instant Delivery</li>
           <li>Free Replacement ✔</li>
         </ul>
-\<a href="#" onclick="payDirectly(this, '149.00'); return false;" class="plan-btn">🔥BUY NOW ₹149</a>    
- </div>
+        <a href="https://rzp.io/rzp/vs94Xkc" class="plan-btn" target="_blank">🔥BUY NOW ₹149</a>
+      </div>
 
       <!-- PLAN 3 — ₹199 -->
       <div class="pricing-card">
@@ -529,7 +529,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
           <li>25,000 Reels Bundle</li>
           <li>Lifetime Updates ✔</li>
         </ul>
-\<a href="#" onclick="payDirectly(this, '199.00'); return false;" class="plan-btn">👉BUY NOW ₹199</a>
+        <a href="https://rzp.io/rzp/uemT3iq" class="plan-btn" target="_blank">👉BUY NOW ₹199</a>
       </div>
 
     </div>
@@ -773,39 +773,6 @@ slider.addEventListener('scroll',()=>{
   const idx = Math.round(slider.scrollLeft/(slider.scrollWidth/3));
   dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
 });
-</script>
-<script>
-async function payDirectly(btnElement, amount) {
-    // 1. बटन का टेक्स्ट बदलकर लोडिंग दिखाओ ताकि यूज़र दोबारा क्लिक न करे
-    const originalText = btnElement.innerHTML;
-    btnElement.innerHTML = "⏳ Processing...";
-    btnElement.style.pointerEvents = "none"; // डबल क्लिक रोको
-
-    // 2. तुम्हारी API डिटेल्स
-    const merchantId = "f9eccac5-eb5f-4294-aea4-10f435adc784";
-    const apiUrl = `https://superassets.in/api/v1/create?merchant_id=${merchantId}&amount=${amount}`;
-
-    try {
-        // 3. SuperPay को बैकग्राउंड में रिक्वेस्ट भेजो
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-
-        // 4. अगर लिंक बन गया, तो सीधा QR/Payment पेज पर रिडायरेक्ट कर दो
-        if (data.status === "OK" && data.payment_link) {
-            window.location.href = data.payment_link;
-        } else {
-            // अगर API में कोई एरर आया, तो स्क्रीन पर दिखेगा
-            alert("Error: " + JSON.stringify(data));
-            btnElement.innerHTML = originalText;
-            btnElement.style.pointerEvents = "auto";
-        }
-    } catch (error) {
-        // अगर इंटरनेट नहीं है या सर्वर डाउन है
-        alert("पेमेंट सिस्टम से कनेक्ट नहीं हो पा रहा है। थोड़ी देर में कोशिश करें।");
-        btnElement.innerHTML = originalText;
-        btnElement.style.pointerEvents = "auto";
-    }
-}
 </script>
 </body>
 </html>
