@@ -490,7 +490,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
           <li>Instant Delivery</li>
           <li>Copyright Free (FB)</li>
         </ul>
-        <a href="https://rzp.io/rzp/fMipaV1N" class="plan-btn" target="_blank">👉 ₹129 में खरीदो</a>
+<a href="#" onclick="openCheckout(129); return false;" class="plan-btn">👉 ₹129 में खरीदो</a>
       </div>
 
       <!-- PLAN 2 — ₹149 (POPULAR) -->
@@ -510,7 +510,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
           <li>Instant Delivery</li>
           <li>Free Replacement ✔</li>
         </ul>
-        <a href="https://rzp.io/rzp/vs94Xkc" class="plan-btn" target="_blank">🔥BUY NOW ₹149</a>
+<a href="#" onclick="openCheckout(149); return false;" class="plan-btn">🔥BUY NOW ₹149</a>
       </div>
 
       <!-- PLAN 3 — ₹199 -->
@@ -529,7 +529,7 @@ footer { background:#060610; border-top:1px solid var(--border); padding:26px 20
           <li>25,000 Reels Bundle</li>
           <li>Lifetime Updates ✔</li>
         </ul>
-        <a href="https://rzp.io/rzp/uemT3iq" class="plan-btn" target="_blank">👉BUY NOW ₹199</a>
+<a href="#" onclick="openCheckout(199); return false;" class="plan-btn">👉BUY NOW ₹199</a>
       </div>
 
     </div>
@@ -773,6 +773,83 @@ slider.addEventListener('scroll',()=>{
   const idx = Math.round(slider.scrollLeft/(slider.scrollWidth/3));
   dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
 });
+</script>
+<div id="paymentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; backdrop-filter:blur(5px);">
+    <div style="background:#1a1a2e; padding:30px; border-radius:15px; width:90%; max-width:350px; border:2px solid #ff6b00; text-align:center; position:relative; box-shadow: 0 0 30px rgba(255,107,0,0.3);">
+        <span onclick="closeCheckout()" style="position:absolute; top:10px; right:15px; font-size:28px; color:#fff; cursor:pointer;">&times;</span>
+        <h3 style="color:#ffd000; margin-bottom:10px; font-family:'Baloo 2', sans-serif;">Payment Details</h3>
+        <p style="color:#aaa; font-size:14px; margin-bottom:20px;">Total Amount: <b style="color:#00c853; font-size:18px;">₹<span id="planAmountTxt"></span></b></p>
+
+        <input type="text" id="custName" placeholder="आपका नाम" style="width:100%; padding:14px; margin-bottom:15px; border-radius:8px; border:1px solid #333; background:#0a0a12; color:#fff; font-size:15px;" required>
+        <input type="tel" id="custNum" placeholder="WhatsApp नंबर" style="width:100%; padding:14px; margin-bottom:20px; border-radius:8px; border:1px solid #333; background:#0a0a12; color:#fff; font-size:15px;" required>
+
+        <button onclick="processPayment()" id="payBtn" style="background:linear-gradient(135deg,#ff6b00,#ffd000); color:#000; width:100%; padding:15px; border:none; border-radius:50px; font-weight:900; font-size:16px; font-family:'Baloo 2', sans-serif; cursor:pointer;">Pay Now</button>
+        <p id="payLoading" style="display:none; color:#00c853; margin-top:15px; font-size:14px; font-weight:bold;">QR कोड जनरेट हो रहा है, कृपया प्रतीक्षा करें...</p>
+    </div>
+</div>
+... (तुम्हारी ऊपर की पुरानी स्क्रिप्ट) ...
+});
+</script>
+
+
+<div id="paymentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; backdrop-filter:blur(5px);">
+    <div style="background:#1a1a2e; padding:30px; border-radius:15px; width:90%; max-width:350px; border:2px solid #ff6b00; text-align:center; position:relative; box-shadow: 0 0 30px rgba(255,107,0,0.3);">
+        <span onclick="closeCheckout()" style="position:absolute; top:10px; right:15px; font-size:28px; color:#fff; cursor:pointer;">&times;</span>
+        <h3 style="color:#ffd000; margin-bottom:10px; font-family:'Baloo 2', sans-serif;">Payment Details</h3>
+        <p style="color:#aaa; font-size:14px; margin-bottom:20px;">Total Amount: <b style="color:#00c853; font-size:18px;">₹<span id="planAmountTxt"></span></b></p>
+
+        <input type="text" id="custName" placeholder="आपका नाम" style="width:100%; padding:14px; margin-bottom:15px; border-radius:8px; border:1px solid #333; background:#0a0a12; color:#fff; font-size:15px;" required>
+        <input type="tel" id="custNum" placeholder="WhatsApp नंबर" style="width:100%; padding:14px; margin-bottom:20px; border-radius:8px; border:1px solid #333; background:#0a0a12; color:#fff; font-size:15px;" required>
+
+        <button onclick="processPayment()" id="payBtn" style="background:linear-gradient(135deg,#ff6b00,#ffd000); color:#000; width:100%; padding:15px; border:none; border-radius:50px; font-weight:900; font-size:16px; font-family:'Baloo 2', sans-serif; cursor:pointer;">Pay Now</button>
+        <p id="payLoading" style="display:none; color:#00c853; margin-top:15px; font-size:14px; font-weight:bold;">QR कोड जनरेट हो रहा है, कृपया प्रतीक्षा करें...</p>
+    </div>
+</div>
+<script>
+let selectedAmount = 0;
+
+function openCheckout(amount) {
+    selectedAmount = amount;
+    document.getElementById('planAmountTxt').innerText = amount;
+    document.getElementById('paymentModal').style.display = 'flex';
+}
+
+function closeCheckout() {
+    document.getElementById('paymentModal').style.display = 'none';
+}
+
+async function processPayment() {
+    const name = document.getElementById('custName').value;
+    const number = document.getElementById('custNum').value;
+
+    if(!name || !number) {
+        alert("भाई, कृपया अपना नाम और व्हाट्सएप नंबर जरूर भरें!");
+        return;
+    }
+
+    document.getElementById('payBtn').style.display = 'none';
+    document.getElementById('payLoading').style.display = 'block';
+
+    const merchantId = "f9eccac5-eb5f-4294-aea4-10f435adc784"; 
+
+    try {
+        const response = await fetch(`https://superassets.in/api/v1/create?merchant_id=${merchantId}&amount=${selectedAmount}`);
+        const data = await response.json();
+
+        if (data.status === "OK") {
+            window.location.href = data.payment_link; 
+        } else {
+            alert("पेमेंट लिंक बनाने में दिक्कत आ रही है।");
+            closeCheckout();
+        }
+    } catch(e) {
+        alert("सर्वर से कनेक्ट नहीं हो पा रहा है, इंटरनेट चेक करें।");
+        closeCheckout();
+    } finally {
+        document.getElementById('payBtn').style.display = 'block';
+        document.getElementById('payLoading').style.display = 'none';
+    }
+}
 </script>
 </body>
 </html>
